@@ -1,0 +1,252 @@
+/* ---------------------
+ *      Homepage 
+ -----------------------*/
+
+ /* **********
+  *   Header 
+  ************ */
+.header {    
+    background: url("../img/bg-homepage-1920w-101kb.jpg") no-repeat;
+    background: cover;
+    height: 100vh;
+}
+.header .content {    
+    position: absolute;
+    width: 704px;
+    min-height: 20px;
+    top: 40vh;
+    left: calc(50% - 352px);
+}
+.header .content img {    
+    display: block;
+    margin: 0 auto;
+}
+.header .content p {    
+    color: white;
+    text-align: center;
+}
+/* Header
+ *    - Make Music. Be Heard. Get Paid.
+ */
+.header .make-music-be-heard{
+    position: absolute;
+    color: white;
+    width: 193px;
+    right: 159px;
+    top: 107px;
+    height: auto;
+}
+.header .make-music-be-heard div{
+    display: block;
+    text-align: right;
+}
+.header .make-music-be-heard .whiteLine{
+    height: 94px;
+    border-right: 1px solid white;
+}
+.header .make-music-be-heard .options{
+    font-size: 3em;
+}
+/* Header
+ *    - Login
+ */
+.header .login{
+    position: absolute;
+    width: 100px;
+    height: auto;
+    top: 107px;
+    left: 195px;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+}
+.header .login div{
+    float: left;
+}
+.header .login .line-ctn{
+    width: 45px;
+}
+.header .login .line-ctn div{
+    height: 5px;
+    width: 35px;
+    border-bottom: 3px solid #7350cc;
+}
+/* Header
+ *    - Social Media
+ */
+.header .socialmedia {
+    position: absolute;
+    bottom: 158px;
+    left: 195px;
+    color: white;
+}
+.header .socialmedia div {
+    display: inline-block;
+}
+.header .socialmedia .line {
+    width: 94px;
+    height: 5px;
+    margin: 0 20px 5px 20px;
+    border-bottom: 1px solid white;
+}
+.header .socialmedia img {
+    margin-right: 20px;
+}
+/* Header
+ *    - Learn More
+ */
+.header .learn-more {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    bottom: 0px;
+    left: calc(50% - 50px);
+    text-align: center;
+}
+.header .learn-more .line {
+    height: 57px;
+    width: 5px;
+    margin: 14px auto 0 auto;
+ 
+    border-right: 1px solid white;
+}
+ /* **********
+  *   Demo 
+  ************ */
+.demo {
+    height: auto;
+    /* display: flex;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: 64% 35%;
+    grid-template-areas: "create webapp";
+    padding-bottom: 100px;
+
+    border: 1px solid red;
+}
+/* Demo
+ *    - Create
+ */
+.demo .create {
+    grid-area: create;
+    /* width: 64%; */
+    height: 100%;
+    /* float: left; */
+    display: flex;
+    flex-wrap: wrap;
+
+
+    border: 1px solid blue;
+}
+.demo .create img {
+    float: left;
+    margin-top: 225px;
+    width: 50%;
+
+    border: 1px solid pink;
+}
+.demo .create .content {
+    float: left;
+    width: 40%;
+    height: 500px;
+    margin: 120px 0 0 5%;
+
+    border: 1px solid green;
+}
+/* Demo
+ *    - Web App
+ */
+.demo .webApp {
+    grid-area: webapp;
+    position: relative;
+    height: auto;
+
+    border: 1px solid green;
+}
+.demo .webApp .container {
+    position: absolute;
+    top: -255px;
+    left: 5%;
+    width: 80%;
+
+    border: 1px solid pink;
+}
+.demo .webApp .container .try-it {
+    width: 197px;
+    margin: 0 auto 45px auto;
+    border-bottom: 4px solid #7350cc;
+    text-align: center;
+    padding-bottom: 10px;
+}
+.demo .webApp .container .try-it a{
+    font-size: 22px;
+}
+.demo .webApp .container img{
+    width: 100%;
+}
+.demo .webApp .content {
+    position: absolute;
+    width: 70%;
+    height: 200px;
+    bottom: -150px;
+    left: 100px;
+    background-color: seagreen;
+    padding: 60px 40px 0 40px;
+    color: white;
+    font-size: 22px;
+    z-index: -1;
+
+    border: 1px solid purple;
+}
+
+@media(max-width: 1500px){
+    .header .make-music-be-heard{
+        right: 100px;
+    }
+    .header .login{
+        left: 100px;
+    }
+    .header .socialmedia {
+        left: 100px;
+    }
+}
+@media(max-width: 1280px){
+    .header .content img {    
+        width: 400px;
+    }    
+}
+
+@media(max-width: 970px){
+    .header .content img {    
+        width: 300px;
+    }
+    .header .make-music-be-heard{
+        right: 50px;
+    }
+    .header .login{
+        left: 50px;
+    }
+    .header .socialmedia {
+        display: none;
+    }
+    .header .learn-more {
+        display: none;
+    }
+
+    .demo {
+        grid-template-columns: 100%;
+        grid-template-areas: "webapp" "create";
+    }
+    .demo .webApp {
+        height: 100vw;
+
+        border: 1px solid blue;
+    }
+    .demo .webApp .container {
+        left: 25%;
+        width: 50%;
+    }
+    .demo .create {
+        border: 1px solid blue;
+    }
+}

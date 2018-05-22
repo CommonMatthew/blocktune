@@ -1,0 +1,30 @@
+html, body {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+a:focus {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+a:visited {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+a:active {
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+
+.wrapper {
+    position: relative;
+    max-width: 1920px;
+    height: auto;
+    margin: 0 auto;
+}
