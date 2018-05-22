@@ -21,10 +21,73 @@ a:active {
     color: white;
     outline: none;
 }
+li {
+    list-style: none;
+}
 
+ul {
+    padding: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+*:focus {
+    outline: 0;
+}
+@font-face {
+    font-family: 'Futura-Koyu';
+    src: url('Futura-Koyu.ttf') format('truetype');
+}
+:root {
+    --Font-Family-Primary: Futura-Koyu; 
+
+    --Color-Primary: white;
+    --Color-Secondary: #7350cc;
+    --Color-Tertiary: #4a4a4a;
+
+    --Font-Weight-Primary: 500;
+
+    --Letter-Spacing-v1: 0.5px;
+    --Letter-Spacing-v2: 3px;
+
+    --Line-Height-V1: 1.39;
+    --Line-Height-V2: 1.67;
+}
 .wrapper {
     position: relative;
     max-width: 1920px;
     height: auto;
     margin: 0 auto;
+}
+
+.Paragraph-V1 {
+    font-family: var(--Font-Family-Primary);
+    font-weight: var(--Font-Family-Primary);
+    line-height: var(--Line-Height-V2);
+    color: var(--Color-Tertiary);
+    letter-spacing: var(--Letter-Spacing-v1);
+    font-size: 1vw;
+}
+.Paragraph-V2 {
+    font-family: var(--Font-Family-Primary);
+    font-weight: var(--Font-Family-Primary);
+    line-height: var(--Line-Height-V2);
+    color: var(--Color-Primary);
+    letter-spacing: var(--Letter-Spacing-v1);
+    font-size: 1vw;
+}
+
+.paragraph-header-v2 {
+    font-family: var(--Font-Family-Primary);
+    color: var(--Color-Primary);
+    letter-spacing: 4px;
+    font-size: 24px;
+}
+
+@media(max-width: 1920px){
+    .paragraph-header-v2 {
+        font-size: 1.5vw;
+    }
 }
