@@ -68,7 +68,7 @@ input:focus {
     line-height: var(--Line-Height-V2);
     color: var(--Color-Tertiary);
     letter-spacing: var(--Letter-Spacing-v1);
-    font-size: 1vw;
+    font-size: 18px;
 }
 .Paragraph-V2 {
     font-family: var(--Font-Family-Primary);
@@ -76,7 +76,7 @@ input:focus {
     line-height: var(--Line-Height-V2);
     color: var(--Color-Primary);
     letter-spacing: var(--Letter-Spacing-v1);
-    font-size: 1vw;
+    font-size: 18px;
 }
 
 .paragraph-header-v2 {
@@ -89,5 +89,48 @@ input:focus {
 @media(max-width: 1920px){
     .paragraph-header-v2 {
         font-size: 1.5vw;
+    }
+    .Paragraph-V1 {
+        font-size: 1vw;
+    }
+    .Paragraph-V2 {
+        font-size: 1vw;
+    }
+}
+@media(max-width: 1500px){
+    .paragraph-header-v2 {
+        font-size: 1.5vw;
+    }
+    .Paragraph-V1 {
+        font-size: 1.3vw;
+    }
+    .Paragraph-V2 {
+        font-size: 1.3vw;
+    }
+}
+@media(max-width: 970px){
+    .paragraph-header-v2 {
+        font-size: 2.5vw;
+    }
+    .Paragraph-V1 {
+        font-size: 2.5vw;
+        line-height: 2;
+    }
+    .Paragraph-V2 {
+        font-size: 2vw;
+        
+    }
+}
+
+@media(max-width: 750px){
+    .Paragraph-V1 {
+        font-size: 3vw;
+    }
+}
+
+@media(max-width: 414px){
+    .Paragraph-V1 {
+        font-size: 3.5vw;
+        line-height: 1.25;
     }
 }

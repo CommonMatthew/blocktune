@@ -169,12 +169,12 @@
     flex-wrap: wrap;
 
 
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 .demo .create img {
     float: left;
-    margin-top: 225px;
-    width: 50%;
+    margin-top: 300px;
+    width: 45%;
 
     /* border: 1px solid pink; */
 }
@@ -183,8 +183,6 @@
     width: 40%;
     height: auto;
     margin: 120px 0 0 5%;
-
-    /* border: 1px solid green; */
 }
 .demo .create .content .number {
     margin: 0;
@@ -204,7 +202,7 @@
     letter-spacing: var(--Letter-Spacing-v2);
     color: var(--Color-Secondary);    
     line-height: var(--Line-Height-V1);
-    font-size: 1.8vw;
+    font-size: 36px;
 }
 .demo .create .content .companies {
     height: auto;
@@ -221,8 +219,7 @@
 .demo .create .content .callToAction{
     background-image: linear-gradient(283deg, #ab88e8, #563e98);
     border-radius: 2px;
-    display: block;
-    width: calc(349px - 20px);
+    display: inline-block;
     margin: 36px 0 0 0;
     font-family: var(--Font-Family-Primary);
     color: var(--Color-Primary);
@@ -236,16 +233,14 @@
     grid-area: webapp;
     position: relative;
     height: auto;
-
-    border: 1px solid green;
 }
 .demo .webApp .container {
     position: absolute;
-    top: -255px;
+    top: -25%;
     left: 5%;
     width: 70%;
-
-    border: 1px solid pink;
+/* 
+    border: 1px solid pink; */
 }
 .demo .webApp .container .try-it {
     width: 197px;
@@ -262,18 +257,131 @@
 .demo .webApp .container img{
     width: 100%;
 }
-.demo .webApp .content {
+.demo .webApp .container .content {
     position: absolute;
-    width: 60%;
-    height: 200px;
-    bottom: 0px;
+    width: 73%;
+    bottom: -190px;
     left: 20%;
     background-color: rgba(115, 80, 204, 0.72);
     border-radius: 3px;
-    padding: 60px 40px 0 40px;
+    padding: 7% 9% 5% 9%;
     color: white;
     font-size: 22px;
     z-index: -1;
+}
+.demo .webApp .content span {
+    margin-top: 50px;
+    display: block;
+    font-family: var(--Font-Family-Primary);
+    color: var(--Color-Primary);
+    font-size: 24px;
+    letter-spacing: 4px;
+}
+/* ***************
+*   Credibility
+***************** */
+.credibility {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 100px;
+
+    min-height: 20px;
+    border: 1px solid red;
+}
+.credibility div {
+    float: left;
+    width: 49%;
+}
+/* Credibility
+ *    - Testimonials
+ */
+.credibility .testimonials {
+    position: relative;
+    height: 773px;  
+    background-color: var(--Color-Secondary);
+    box-shadow: 15px 15px 45px 15px rgba(0, 0, 0, 0.5);  
+    margin-top: 117px;
+    color: white;
+}
+.credibility .testimonials .arrows-wrp { 
+    position: absolute;
+    width: 202px;
+    left: calc(50% - 101px);
+    top: -50px;
+    height: 101px;
+}
+.credibility .testimonials .arrows-wrp div { 
+    display: inline-block;
+    width: 49.5%;
+    height: 101px;
+    background-color: var(--Color-Tertiary);
+    box-shadow: 15px 15px 37px -4px rgba(0, 0, 0, 0.5);
+}
+.credibility .testimonials .arrows-wrp div img { 
+    display: block;
+    margin: calc(50% - 23.5px) calc(50% - 14.5px);
+}
+.credibility .testimonials .arrows-wrp .right { 
+    margin-top: 50.5px;
+}
+.credibility .testimonials h1 {
+    display: block;
+    font-family: var(--Font-Family-Primary);
+    color: var(--Color-Primary);
+    text-align: center;
+    font-size: 36px;
+    letter-spacing: 3px;
+    margin: 173px auto 0 auto;
+}
+.credibility .testimonials .sxsw-wrp { 
+    display: block;
+    width: 100%;
+
+    border: 1px solid green;
+}
+.credibility .testimonials .sxsw-wrp img{ 
+    display: inline-block;
+}
+.credibility .testimonials .sxsw-wrp .content { 
+    display: inline-block;
+
+    border: 1px solid blue;
+}
+
+
+.credibility .testimonials .companies-wrp { 
+    position: absolute;
+    bottom: 0;
+    width: 90%;
+     text-align: justify;
+
+    border: 1px solid green;
+}
+/* Credibility
+ *    - Capitol Studios
+ */
+.credibility .capitol-studios {
+    height: 967px;
+
+    border: 1px solid green;
+}
+@media(max-width: 1980px){
+    .demo .create .content .number {
+        font-size: 3.7vw;
+    }
+    .demo .create .content h1 {
+        font-size: 1.8vw;
+    }
+    .demo .create .content .callToAction {
+        font-size: 1.35vw;
+    }
+    .demo .webApp .container .content {
+        bottom: -20%;
+    }
+    .demo .webApp .content span {
+        font-size: 1.35vw;
+        letter-spacing: 2%;
+    }
 }
 @media(max-width: 1500px){
     .header .make-music-be-heard{
@@ -284,6 +392,15 @@
     }
     .header .socialmedia {
         left: 50px;
+    }
+    .demo .create .content {
+        width: 52%;
+        margin: 80px 0 0 0%;
+    }
+    .demo .webApp .container .content {
+        width: 80%;
+        bottom: -25%;
+        padding: 4% 9% 5% 9%;
     }
 }
 @media(max-width: 1280px){
@@ -297,8 +414,15 @@
 }
 
 @media(max-width: 970px){
+    /* 
+     * Header
+     */
     .header {    
         background: url("../img/bg-homepage-header-1155-69kb.jpg") no-repeat;
+    }
+    .header .content {
+        width: 99.5%;
+        left: auto;
     }
     .header .content img {    
         width: 400px;
@@ -328,40 +452,146 @@
         font-size: 16px;
         letter-spacing: 3px;
     }
-
-
-
+     /* 
+     * Demo
+     */
     .demo {
         grid-template-columns: 100%;
         grid-template-areas: "webapp" "create";
     }
+    .demo .create img {
+        display: none;
+    }
+    .demo .create .content {
+        float: auto;
+        display: block;
+        width: 70%;
+        margin: 0 auto;
+    }
+    .demo .create .content .number {
+        font-size: 6vw;
+    }
+    .demo .create .content h1 {
+        font-size: 3.5vw;
+    }
+    .demo .create .content .callToAction {
+        font-size: 3vw;
+    }
     .demo .webApp {
-        height: 100vw;
+        height: 850px;
 
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
     }
     .demo .webApp .container {
-        left: 25%;
-        width: 50%;
+        left: calc(50% - 200px);
+        width: 400px;
+        top: -235px;
     }
-    .demo .create {
-        border: 1px solid blue;
+    .demo .webApp .container .content {
+        width: 300px;
+        bottom: -150px;
+        padding: 10px 20px;
+    }
+    .demo .webApp .container .content .Paragraph-V2 {
+        font-size: 16px;
+    }
+    .demo .webApp .container .content span {
+        font-size: 20px;
     }
 }
 @media(max-width: 750px){
+    /* 
+     * Header
+     */
     .header {    
         background: url("../img/bg-homepage-header-891w-97kb.jpg") no-repeat;
     }
-      .header .content img {    
-        width: 300px;
+    .header .content img {
+        width: 235px;
     }
     .header .content p {    
+        font-size: 12px;
+        letter-spacing: 0.3px;
+    }
+    .header .login {
+        top: 40px;
+    }
+    .header .make-music-be-heard {
+        top: 30px;
+    }
+    .header .make-music-be-heard .number {
+        font-size: 36px;
+        margin: 5px 8px 10px 0;
+    }
+    .header .make-music-be-heard .options {
         font-size: 14px;
-        letter-spacing: 2px;
+    }
+    /* 
+     * Demo
+     */
+    .demo .create .content h1 {
+        font-size: 4vw;
+    }
+    .demo .create .content {
+        width: 80%;
+    }
+    .demo .create .content .callToAction {
+        font-size: 4vw;
+    }
+    .demo .webApp {
+        height: 750px;
+    }
+    .demo .webApp .container {
+        left: calc(50% - 150px);
+        width: 300px;
+        top: -165px;
+    }
+    .demo .webApp .container .content {
+        height: auto;
+        width: 230px;
+        padding: 10px 20px;
+    }
+    .demo .webApp .container .content span {
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+    .demo .webApp .container .content .Paragraph-V2 {
+        font-size: 12px;
     }
 }
 @media(max-width: 414px){
+    /* 
+     * Header
+     */
     .header {    
         background: url("../img/logo-homepage-header-mobile-414w-37kb.jpg") no-repeat;
+        height: 700px;
+    }
+    .header .content {
+        top: 267px;
+    }
+    /* 
+     * Demo
+     */
+    .demo .create .content h1 {
+        font-size: 6vw;
+    }
+    .demo .create .content .callToAction {
+        font-size: 5.7vw;
+        padding: 1.5vw 4vw;
+    }
+    .demo .create .content .companies a img {
+        margin-right: 4vw;
+    }
+    .demo .webApp {
+        height: 650px;
+    }
+    .demo .webApp .container {
+        left: calc(50% - 125px);
+        width: 250px;
+        top: -155px;
+    }
+    .demo .webApp .container .content {
+        width: 200px;
     }
 }
