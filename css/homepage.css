@@ -27,7 +27,7 @@
     font-size: 18px;
     letter-spacing: 3px;
     font-weight: 500;
-    font-family: var(--Font-Family-Primary);
+    font-family: var(--Font-Family-Secondary);
 }
 /* Header
  *    - Make Music. Be Heard. Get Paid.
@@ -102,7 +102,7 @@
     left: 195px;
     font-size: 24px;
     color: var(--Color-Primary);
-    font-family: var(--Font-Family-Primary);
+    font-family: var(--Font-Family-Secondary);
     letter-spacing: 0.7px;
 }
 .header .socialmedia div {
@@ -131,7 +131,7 @@
 }
 .header .learn-more a {
     color: var(--Color-Primary);
-    font-family: var(--Font-Family-Primary);
+    font-family: var(--Font-Family-Secondary);
     font-size: 16px;
     font-weight: var(--Font-Weight-Primary);
     letter-spacing: var(--Letter-Spacing-v1);
@@ -228,7 +228,7 @@
     position: relative;
     height: auto;
 }
-.demo .webApp .container {
+.demo .webApp #demoMobile {
     position: absolute;
     top: -25%;
     left: 5%;
@@ -236,22 +236,22 @@
 /* 
     border: 1px solid pink; */
 }
-.demo .webApp .container .try-it {
+.demo .webApp #demoMobile .try-it {
     width: 197px;
     margin: 0 auto 45px auto;
     border-bottom: 4px solid #7350cc;
     text-align: center;
     padding-bottom: 10px;
 }
-.demo .webApp .container .try-it a{
+.demo .webApp #demoMobile .try-it a{
     font-size: 24px;
     font-family: var(--Font-Family-Primary);
     color: var(--Color-Primary);
 }
-.demo .webApp .container img{
+.demo .webApp #demoMobile img{
     width: 100%;
 }
-.demo .webApp .container .content {
+.demo .webApp #demoMobile .content {
     position: absolute;
     width: 73%;
     bottom: -190px;
@@ -437,7 +437,7 @@
 }
 .credibility .capitol-studios .content-right p { 
     width: 400px;
-    font-family: var(--Font-Family-Primary);
+    font-family: var(--Font-Family-Secondary);
     font-size: 18px;
     letter-spacing: 0.5px;
     color: var(--Color-Primary);
@@ -492,7 +492,7 @@
 }
 .collection .content-left p { 
     width: 400px;
-    font-family: var(--Font-Family-Primary);
+    font-family: var(--Font-Family-Secondary);
     font-size: 18px;
     letter-spacing: 0.5px;
     font-weight: 500;
@@ -509,50 +509,60 @@
     font-size: 24px;
     padding: 10px 40px;
 }
+.collection .backToTop {
+    position: absolute;
+    width: 110px;
+    height: 90px;
+    left: calc(50% - 50px);
+    bottom: 0;
+}
+.collection .backToTop a { 
+    color: var(--Color-Primary);
+    font-family: var(--Font-Family-Primary);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+}
+.collection .backToTop .line {
+    width: 3px;
+    height: 57px;
+    border-right: 1px solid var(--Color-Primary);
+    margin: 15px auto 0 auto;
+}
 /* ***************
 *   Footer
 ***************** */
 .footer {
     height: 143px;
     background-color: white;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-
-    border: 1px solid red;
-}
-.footer div {
-
-    border: 1px solid blue;
 }
 .footer .logo-ctn img { 
     margin: 48px 0 0 59px;
 }
 .footer .copyright {
+    position: absolute;
+    left: calc(50% - 75px);
+    width: 250px;
     text-align: center;
     font-size: 18px;
     font-weight: 500;
     color: var(--Color-Tertiary);
-    font-family: var(--Font-Family-Primary);
-    margin-top: 70px;
+    font-family: var(--Font-Family-Secondary);
+    top: 60px;
 }
-.footer ul {
-    margin: 62px auto 0 auto;
-    width: 500px;
-    padding: 0;
-    text-align: justify;
-
-    border: 1px solid red;
+.footer .links {
+    position: absolute;
+    right: 30px;
+    top: 60px;
+    width: 440px;
 }
-.footer ul li {
+.footer .links div {
     display: inline-block;
-    margin: 0 20px;
-    padding: 0;
-
-    border: 1px solid blue;
+    margin-right: 20px;
+    margin-right: 30px;
 }
-.footer .links ul li a {
-    font-family: var(--Font-Family-Primary);
+.footer .links div a {
+    font-family: var(--Font-Family-Secondary);
     font-size: 18px;
     font-weight: 500;
     color: var(--Color-Tertiary);
@@ -570,7 +580,7 @@
     .demo .create .content .callToAction {
         font-size: 1.35vw;
     }
-    .demo .webApp .container .content {
+    .demo .webApp #demoMobile .content {
         bottom: -20%;
     }
     .demo .webApp .content span {
@@ -607,7 +617,7 @@
         width: 52%;
         margin: 80px 0 0 0%;
     }
-    .demo .webApp .container .content {
+    .demo .webApp #demoMobile .content {
         width: 80%;
         bottom: -25%;
         padding: 4% 9% 5% 9%;
@@ -618,10 +628,26 @@
     .collection .logo-universal { 
         right: 50px;
     }
-    .footer ul li {
+    /* .footer ul li {
         width: 45%;
-
-
+    } */
+    .footer .logo-ctn img { 
+        width: 200px;
+    }
+    .footer .copyright {
+        font-size: 16px;
+        top: 60px;
+    }
+    .footer .links {
+        right: 0px;
+        top: 60px;
+        width: 350px;
+    }
+    .footer .links div {
+        margin-right: 15px;
+    }
+    .footer .links div a {
+        font-size: 16px;
     }
 }
 @media(max-width: 1280px){
@@ -634,6 +660,18 @@
     } 
     .collection .logo-universal { 
         width: 40%;
+    }
+}
+@media(max-width: 1100px){
+    .footer .links {
+        right: 50px;
+        top: 20px;
+        width: 150px;
+    }
+    .footer .links div {
+        width: 100%;
+        display: block;
+        margin: 0 15px 5px 0;
     }
 }
 @media(max-width: 970px){
@@ -705,20 +743,20 @@
 
         /* border: 1px solid blue; */
     }
-    .demo .webApp .container {
+    .demo .webApp #demoMobile {
         left: calc(50% - 200px);
         width: 400px;
         top: -235px;
     }
-    .demo .webApp .container .content {
+    .demo .webApp #demoMobile .content {
         width: 300px;
         bottom: -150px;
         padding: 10px 20px;
     }
-    .demo .webApp .container .content .Paragraph-V2 {
+    .demo .webApp #demoMobile .content .Paragraph-V2 {
         font-size: 16px;
     }
-    .demo .webApp .container .content span {
+    .demo .webApp #demoMobile .content span {
         font-size: 20px;
     }
     /* ***************
@@ -747,6 +785,42 @@
     .collection .content-left { 
         width: 460px;
         margin: 345px 0 0 50px;
+    }
+    /* ***************
+    *   Footer
+    ***************** */
+    .footer {
+        height: 450px;
+    }
+    .footer .logo-ctn { 
+        position: relative;
+        width: 100%;
+    }
+    .footer .logo-ctn img {
+        width: 200px;
+        margin: 50px auto;
+        display: block;
+    }
+    .footer .copyright {
+        font-size: 18px;
+        top: auto;
+        bottom: 50px;
+        left: calc(50% - 126px);
+    }
+    .footer .links {
+        right: auto;
+        top: 150px;
+        width: 150px;
+        left: calc(50% - 75px);
+    }
+    .footer .links div {
+        width: 100%;
+        display: block;
+        margin: 0 15px 15px 0;
+        text-align: center;
+    }
+    .footer .links div a {
+        font-size: 18px;
     }
 }
 @media(max-width: 750px){
@@ -791,21 +865,21 @@
     .demo .webApp {
         height: 750px;
     }
-    .demo .webApp .container {
+    .demo .webApp #demoMobile {
         left: calc(50% - 150px);
         width: 300px;
         top: -165px;
     }
-    .demo .webApp .container .content {
+    .demo .webApp #demoMobile .content {
         height: auto;
         width: 230px;
         padding: 10px 20px;
     }
-    .demo .webApp .container .content span {
+    .demo .webApp #demoMobile .content span {
         font-size: 18px;
         letter-spacing: 3px;
     }
-    .demo .webApp .container .content .Paragraph-V2 {
+    .demo .webApp #demoMobile .content .Paragraph-V2 {
         font-size: 12px;
     }
     /* Credibility
@@ -910,12 +984,12 @@
     .demo .webApp {
         height: 650px;
     }
-    .demo .webApp .container {
+    .demo .webApp #demoMobile {
         left: calc(50% - 125px);
         width: 250px;
         top: -155px;
     }
-    .demo .webApp .container .content {
+    .demo .webApp #demoMobile .content {
         width: 200px;
     }
     .demo .create .content .line {
@@ -1016,5 +1090,8 @@
         font-size: 12px;
         letter-spacing: 0px;
         line-height: 2;
+    }
+    .collection .backToTop {
+        display: none;
     }
 }

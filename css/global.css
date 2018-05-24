@@ -40,8 +40,13 @@ input:focus {
     font-family: 'Futura-Koyu';
     src: url('Futura-Koyu.ttf') format('truetype');
 }
+@font-face {
+    font-family: 'Futura-book';
+    src: url('futura-medium-bt.ttf') format('truetype');
+}
 :root {
     --Font-Family-Primary: Futura-Koyu; 
+    --Font-Family-Secondary: Futura-book;
 
     --Color-Primary: white;
     --Color-Secondary: #7350cc;
@@ -63,16 +68,16 @@ input:focus {
 }
 
 .Paragraph-V1 {
-    font-family: var(--Font-Family-Primary);
-    font-weight: var(--Font-Family-Primary);
+    font-family: var(--Font-Family-Secondary);
+    font-weight: var(--Font-Weight-Primary);
     line-height: var(--Line-Height-V2);
     color: var(--Color-Tertiary);
     letter-spacing: var(--Letter-Spacing-v1);
     font-size: 18px;
 }
 .Paragraph-V2 {
-    font-family: var(--Font-Family-Primary);
-    font-weight: var(--Font-Family-Primary);
+    font-family: var(--Font-Family-Secondary);
+    font-weight: var(--Font-Weight-Primary);
     line-height: var(--Line-Height-V2);
     color: var(--Color-Primary);
     letter-spacing: var(--Letter-Spacing-v1);

@@ -13,7 +13,7 @@
     <!--  
     ********** Header **********
     -->
-    <section class="header wrapper">
+    <section class="header wrapper" id="backToTop">
         <!-- Logo & Content -->
         <div class="content">
             <img src="img/logo-block-tune-678w-5kb.png">
@@ -74,7 +74,7 @@
     <section class="demo wrapper">
         <!-- Create -->
         <div class="create">
-            <img src="img/rep-create-520w-24kb.jpg" alt="">
+            <img src="img/rep-create-520w-24kb.jpg" id="demoLaptop" alt="">
             <div class="content">
                 <p class="number">02</p>
                 <div class="line">&nbsp;</div>
@@ -107,7 +107,7 @@
         </div>
         <!-- Web App -->
         <div class="webApp">
-            <div class="container">
+            <div id="demoMobile">
                 <div class="try-it">
                     <a href="#">
                         Try It Free Now
@@ -132,20 +132,20 @@
             <!-- Arrows -->
             <div class="arrows-wrp">
                 <div>
-                    <img src="img/arrow-left-white-409kb.png">
+                    <img src="img/arrow-left-white-409kb.png" id="arrowPreviousTestimonials">
                 </div>
                 <div class="right">
-                    <img src="img/arrow-right-white-399kb.png" alt="">
+                    <img src="img/arrow-right-white-399kb.png" id="arrowNextTestimonials">
                 </div>
             </div>
             <h1>What Are People Saying?</h1>
             <!-- SXSW -->
             <div class="sxsw-wrp">
                 <div class="img-ctn">
-                    <img src="img/logo-sxsw-255w-4kb.png" alt="">
+                    <img src="img/logo-sxsw-255w-4kb.png" id="tstm-img" alt="">
                 </div>                
                 <div class="content">
-                    <span>
+                    <span id="tstm-constent">
                          Winner of the SXSW Music Hackathon
                     </span>                    
                     <div class="line">&nbsp;</div>
@@ -209,6 +209,12 @@
                 Try It Now
             </a>
         </div>
+        <div class="backToTop">
+            <a href="#backToTop" id="scrollToTopATag">
+                 Back To Top
+            </a>
+            <div class="line">&nbsp;</div>
+        </div>
     </section>
     <!--  
     ********** Footer **********
@@ -244,6 +250,193 @@
                 </a>
             </div>            
         </div>
-    </section>    
+    </section>   
+    
+    <script src="js/jquery-3-3-1.js" ></script>
+    <script>
+
+        const scrollingFx = {
+            scrollPosition: 0,
+            scrollState: 0,
+            phone: {
+                element: document.getElementById("demoMobile"),
+                styleTop: 25,
+                scrollDown: () => {
+                    if (scrollingFx.scrollPosition < 300 && scrollingFx.phone.styleTop > 15 ) {
+                        let speed = scrollingFx.phone.styleTop - 0.25;
+                        scrollingFx.phone.styleTop = speed;
+                        scrollingFx.phone.element.style.top = "-" + speed + "%";
+                    }
+                },
+                scrollUp: () => {
+                    if (scrollingFx.scrollPosition > 500 && scrollingFx.phone.styleTop < 25) {
+                        let speed = scrollingFx.phone.styleTop + 0.25;
+                        scrollingFx.phone.styleTop = speed;
+                        scrollingFx.phone.element.style.top = "-" + speed + "%";
+                    }
+                }
+            },
+            laptop: {
+                element: document.getElementById("demoLaptop"),
+                minScrollRange: 0,
+                maxScrollRange: 0,
+                marginTop: 300,
+                maxMarginTop: 400,
+                minMagingTop: 200,
+                increment: 5,
+                decrement: 5,
+                scrollDown: () => {
+                    if (scrollingFx.scrollPosition < 1826 && scrollingFx.laptop.marginTop < scrollingFx.laptop.maxMarginTop) {
+                        let decrementBy = scrollingFx.laptop.marginTop + scrollingFx.laptop.decrement;
+                        scrollingFx.laptop.marginTop = decrementBy;
+                        scrollingFx.laptop.element.style.marginTop = decrementBy + "px";
+                    }
+                },
+                scrollUp: () => {
+                    if (scrollingFx.scrollPosition > 500 && scrollingFx.laptop.marginTop > scrollingFx.laptop.minMagingTop) {
+                        let incrementBy = scrollingFx.laptop.marginTop - scrollingFx.laptop.increment;
+                        scrollingFx.laptop.marginTop = incrementBy;
+                        scrollingFx.laptop.element.style.marginTop = incrementBy + "px";
+                    }
+                }
+            }
+        }
+
+        window.addEventListener("scroll", () => {
+            scrollingFx.scrollPosition = window.pageYOffset;
+
+            // Scrolling Down
+            if(scrollingFx.scrollPosition > scrollingFx.scrollState) {
+
+                scrollingFx.scrollState = scrollingFx.scrollPosition;
+                scrollingFx.phone.scrollDown();
+                scrollingFx.laptop.scrollUp();
+
+            } else {
+                // Scrolling Up
+
+                console.log("Scrolling UP");
+
+                scrollingFx.scrollState = scrollingFx.scrollPosition;
+                scrollingFx.phone.scrollUp();
+                scrollingFx.laptop.scrollDown();
+            }      
+        });
+
+        const tstmSlider = {
+            imageEl: document.getElementById("tstm-img"),
+            contentEl: document.getElementById("tstm-constent"),
+            // Testimonials
+            tstm: {
+                active: "sxsw",
+                sxsw: {
+                    image: "img/logo-sxsw-255w-4kb.png",
+                    content: "Winner of the SXSW Music Hackathon"
+                },
+                musictech:{
+                    image: "img/logo-musictech-219w-17kb.jpg",
+                    content: "Winner of the San Francisco Music Hackathon"
+                },
+                shapeATT: {
+                    image: "img/logo-shape-att-331w-4kb.jpg",
+                    content: "Current finalist for AT&T's 2018 Entertainment App of the Year"
+                }
+            },
+            next: {
+                el: document.getElementById("arrowNextTestimonials"),
+                loadContent: () => {
+                    switch (tstmSlider.tstm.active) {
+                        case "sxsw":
+                            tstmSlider.contentEl.innerText = tstmSlider.tstm.musictech.content;
+                            tstmSlider.imageEl.src = tstmSlider.tstm.musictech.image;
+                            tstmSlider.tstm.active = "musictech";
+
+                            console.log("Image Element:", tstmSlider.imageEl);
+                            console.log("case sxsw");
+                            break;
+
+                        case "musictech":
+                            tstmSlider.contentEl.innerText  = tstmSlider.tstm.shapeATT.content;
+                            tstmSlider.imageEl.src = tstmSlider.tstm.shapeATT.image;
+                            tstmSlider.tstm.active = "shapeATT";
+                            console.log("case musictech");
+                            break;
+
+                        case "shapeATT":
+                            tstmSlider.contentEl.innerText  = tstmSlider.tstm.sxsw.content;
+                            tstmSlider.imageEl.src = tstmSlider.tstm.sxsw.image;
+                            tstmSlider.tstm.active = "sxsw";
+                            console.log("case shapeATT");
+                            break;
+                    }
+                }                
+            },
+            previous: {
+                el: document.getElementById("arrowPreviousTestimonials"),
+                loadContent: () => {
+                    switch (tstmSlider.tstm.active) {
+                        case "sxsw":
+                            tstmSlider.contentEl.innerText = tstmSlider.tstm.shapeATT.content;
+                            tstmSlider.imageEl.src = tstmSlider.tstm.shapeATT.image;
+                            tstmSlider.tstm.active = "shapeATT";
+                            break;
+
+                        case "musictech":
+                            tstmSlider.contentEl.innerText = tstmSlider.tstm.sxsw.content;
+                            tstmSlider.imageEl.src = tstmSlider.tstm.sxsw.image;
+                            tstmSlider.tstm.active = "sxsw";
+                            break;
+
+                        case "shapeATT":
+                            tstmSlider.contentEl.innerText = tstmSlider.tstm.musictech.content;
+                            tstmSlider.imageEl.src = tstmSlider.tstm.musictech.image;
+                            tstmSlider.tstm.active = "musictech";
+                            break;
+                    }
+                }
+            }
+        }
+
+        tstmSlider.next.el.addEventListener("click", () => {
+            tstmSlider.next.loadContent();
+        });
+
+        tstmSlider.previous.el.addEventListener("click", () => {
+            tstmSlider.previous.loadContent();
+        });
+
+
+        /* ***************
+        *   Smooth Scrolling
+        ***************** */
+        $('a[href*="#"]')
+            .not('[href="#"]')
+            .not('[href="#0"]')
+            .click(function (event) {
+            if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+                &&
+                location.hostname == this.hostname
+            ) {
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000, function () {
+                        var $target = $(target);
+                        $target.focus();
+                        if ($target.is(":focus")) { 
+                            return false;
+                        } else {
+                            $target.attr('tabindex', '-1'); 
+                            $target.focus(); 
+                        };
+                    });
+                }
+            }
+        });        
+    </script>
 </body>
 </html>
