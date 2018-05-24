@@ -509,6 +509,54 @@
     font-size: 24px;
     padding: 10px 40px;
 }
+/* ***************
+*   Footer
+***************** */
+.footer {
+    height: 143px;
+    background-color: white;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+
+    border: 1px solid red;
+}
+.footer div {
+
+    border: 1px solid blue;
+}
+.footer .logo-ctn img { 
+    margin: 48px 0 0 59px;
+}
+.footer .copyright {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--Color-Tertiary);
+    font-family: var(--Font-Family-Primary);
+    margin-top: 70px;
+}
+.footer ul {
+    margin: 62px auto 0 auto;
+    width: 500px;
+    padding: 0;
+    text-align: justify;
+
+    border: 1px solid red;
+}
+.footer ul li {
+    display: inline-block;
+    margin: 0 20px;
+    padding: 0;
+
+    border: 1px solid blue;
+}
+.footer .links ul li a {
+    font-family: var(--Font-Family-Primary);
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--Color-Tertiary);
+}
 @media(max-width: 1980px){
     /* **********
     *   Demo 
@@ -569,6 +617,11 @@
     }
     .collection .logo-universal { 
         right: 50px;
+    }
+    .footer ul li {
+        width: 45%;
+
+
     }
 }
 @media(max-width: 1280px){
