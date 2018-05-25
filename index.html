@@ -328,22 +328,17 @@
                 }
             }
         }
-
+        
         window.addEventListener("scroll", () => {
             scrollingFx.scrollPosition = window.pageYOffset;
 
             // Scrolling Down
             if(scrollingFx.scrollPosition > scrollingFx.scrollState) {
-
                 scrollingFx.scrollState = scrollingFx.scrollPosition;
                 scrollingFx.phone.scrollDown();
                 scrollingFx.laptop.scrollUp();
-
             } else {
                 // Scrolling Up
-
-                console.log("Scrolling UP");
-
                 scrollingFx.scrollState = scrollingFx.scrollPosition;
                 scrollingFx.phone.scrollUp();
                 scrollingFx.laptop.scrollDown();
