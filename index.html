@@ -75,14 +75,14 @@
         </div>
         <!-- Learn More -->
         <div class="learn-more">
-            <a href="#">Learn More</a>
+            <a href="#demo">Learn More</a>
             <div class="line">&nbsp;</div>
         </div>
     </section>
     <!--  
      ********** Demo **********
     -->
-    <section class="demo wrapper">
+    <section class="demo wrapper" id="demo">
         <!-- Create -->
         <div class="create">
             <img src="img/rep-create-520w-24kb.jpg" id="demoLaptop" alt="">
@@ -98,9 +98,9 @@
                 <p class="Paragraph-V1">
                     BlockTune.io provides a music creation environment
                     where anything you make can be shared on
-                    SoundCloud, Spotify, and more.  we are proud to say
+                    SoundCloud, Spotify, and more.  We are proud to say
                     that for the first time ever, user sampled remixes can be
-                    published to Itunes and other music marketplace for 
+                    published to iTunes and other music marketplace for 
                     monetization!
                 </p>
                 <div class="companies">
@@ -143,11 +143,11 @@
         <div class="testimonials">
             <!-- Arrows -->
             <div class="arrows-wrp">
-                <div>
-                    <img src="img/arrow-left-white-409kb.png" id="arrowPreviousTestimonials">
+                <div id="arrowPreviousTestimonials">
+                    <img src="img/arrow-left-white-409kb.png" >
                 </div>
-                <div class="right">
-                    <img src="img/arrow-right-white-399kb.png" id="arrowNextTestimonials">
+                <div class="right" id="arrowNextTestimonials">
+                    <img src="img/arrow-right-white-399kb.png" >
                 </div>
             </div>
             <h1>What Are People Saying?</h1>
@@ -247,7 +247,7 @@
     -->
     <section class="footer wrapper">
         <div class="logo-ctn">
-            <a href="/">
+            <a href="index.html">
                 <img src="img/logo-blocktune-4a4a4a-263w-2kb.png" alt="BlockTune">
             </a>            
         </div>
@@ -256,12 +256,12 @@
         </div>
         <div class="links">
             <div>
-                <a href="/">
+                <a href="index.html">
                      Home
                 </a>
             </div>
             <div>
-                <a href="mailto:theblocktune@gmail.com" target="_blank">
+                <a href="mailto:theblocktune@gmail.com">
                     Contact
                 </a>
             </div>
@@ -285,6 +285,7 @@
         const scrollingFx = {
             scrollPosition: 0,
             scrollState: 0,
+            stopFX: 970,
             phone: {
                 element: document.getElementById("demoMobile"),
                 styleTop: 25,
@@ -330,19 +331,22 @@
         }
         
         window.addEventListener("scroll", () => {
-            scrollingFx.scrollPosition = window.pageYOffset;
+            if (window.innerWidth > scrollingFx.stopFX) {
+                console.log("window.innerWidth:", window.innerWidth)
+                scrollingFx.scrollPosition = window.pageYOffset;
 
-            // Scrolling Down
-            if(scrollingFx.scrollPosition > scrollingFx.scrollState) {
-                scrollingFx.scrollState = scrollingFx.scrollPosition;
-                scrollingFx.phone.scrollDown();
-                scrollingFx.laptop.scrollUp();
-            } else {
-                // Scrolling Up
-                scrollingFx.scrollState = scrollingFx.scrollPosition;
-                scrollingFx.phone.scrollUp();
-                scrollingFx.laptop.scrollDown();
-            }      
+                // Scrolling Down
+                if (scrollingFx.scrollPosition > scrollingFx.scrollState) {
+                    scrollingFx.scrollState = scrollingFx.scrollPosition;
+                    scrollingFx.phone.scrollDown();
+                    scrollingFx.laptop.scrollUp();
+                } else {
+                    // Scrolling Up
+                    scrollingFx.scrollState = scrollingFx.scrollPosition;
+                    scrollingFx.phone.scrollUp();
+                    scrollingFx.laptop.scrollDown();
+                } 
+            }                 
         });
 
         const tstmSlider = {         
