@@ -96,7 +96,7 @@
 /* Header
  *    - Social Media
  */
-.header .socialmedia {
+/* .header .socialmedia {
     position: absolute;
     bottom: 158px;
     left: 195px;
@@ -117,7 +117,7 @@
 }
 .header .socialmedia img {
     margin-right: 20px;
-}
+} */
 /* Header
  *    - Learn More
  */
@@ -344,6 +344,9 @@
     display: block;
     margin: 0 auto;
 }
+.credibility .testimonials .sxsw-wrp .logo-musictech {
+        max-width: 150px;
+    }
 .credibility .testimonials .sxsw-wrp .content { 
     display: inline-block;
     width: 49.9%;
@@ -371,6 +374,7 @@
     font-family: var(--Font-Family-Tertiary);
     animation: tstmSlidein 0.5s forwards;
 }
+
 @keyframes tstmSlidein {
     from {
         margin-left: 100%;
@@ -871,6 +875,9 @@
     .credibility .testimonials .sxsw-wrp .content {
         font-size: 4.2vw;
     }
+    .credibility .testimonials .sxsw-wrp .shape-att {
+        margin: 0 auto 125px auto;
+    }
     /* ***************
     *   Collection
     ***************** */
@@ -920,6 +927,7 @@
     .footer .links div a {
         font-size: 18px;
     }
+    
 }
 @media(max-width: 750px){
     /* 
@@ -990,6 +998,12 @@
         width: 300px;
         margin: 50px auto 0 auto;
     }
+    .credibility .testimonials .sxsw-wrp .logo-musictech {
+        max-width: 125px;
+    }
+    .credibility .testimonials .sxsw-wrp .shape-att {
+        margin: 0 auto 50px auto;
+    }
     .credibility .testimonials .sxsw-wrp .img-ctn {
         width: 200px;
         display: block;
@@ -1053,6 +1067,12 @@
         letter-spacing: 0px;
         line-height: 2;
     }
+    /* .shape-att {
+        margin-bottom: 50px;
+    }
+    .musictech-summit {
+        max-width: 150px;
+    } */
 }
 @media(max-width: 414px){
     /* ***************

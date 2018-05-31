@@ -96,6 +96,31 @@ input:focus {
     letter-spacing: 4px;
     font-size: 24px;
 }
+/* Header
+ *    - Social Media
+ */
+.header .socialmedia {
+    position: absolute;
+    bottom: 158px;
+    left: 195px;
+    font-size: 24px;
+    color: var(--Color-Primary);
+    font-family: var(--Font-Family-Secondary);
+    letter-spacing: 0.7px;
+}
+.header .socialmedia div {
+    display: inline-block;
+}
+.header .socialmedia .line {
+    width: 94px;
+    height: 18px;
+    margin: 0 20px 0px 20px;
+    padding-top: 10px;
+    border-bottom: 1px solid white;
+}
+.header .socialmedia img {
+    margin-right: 20px;
+}
 @media(max-width: 1920px){
     .paragraph-header-v2 {
         font-size: 1.5vw;

@@ -356,16 +356,16 @@
             tstm: {
                 active: "sxsw",
                 sxsw: {
-                    image: "img/logo-sxsw-255w-4kb.png",
+                    image: "logo-sxsw-255w-4kb.png",
                     content: "Winner of the SXSW Music Hackathon",
                     imgStyle: "class='logo-musictech'"
                 },
                 musictech:{
-                    image: "img/logo-musictech-219w-17kb.jpg",
+                    image: "logo-musictech-summit-200w-10kb.png",
                     content: "Winner of the San Francisco Music Hackathon"
                 },
                 shapeATT: {
-                    image: "img/logo-shape-att-331w-4kb.jpg",
+                    image: "logo-shape-att-tech-expo-907w-37kb.png",
                     content: "Current finalist for AT&T's 2018 Entertainment App of the Year"
                 }
             },
@@ -386,8 +386,8 @@
                                 document.getElementById("tstm-ctn").innerHTML = "";
                                 document.getElementById("tstm-img-ctn").innerHTML = "";
  
-                                        document.getElementById("tstm-img-ctn").innerHTML = ` 
-                                    <img src="img/logo-sxsw-255w-4kb.png" id="tstm-img" class="tstm-img-slide-out">                            
+                                    document.getElementById("tstm-img-ctn").innerHTML = ` 
+                                    <img src="img/` + tstmSlider.tstm.sxsw.image + `" id="tstm-img" class="tstm-img-slide-out">                            
                                 `; 
                                 setTimeout(function () {
                                     document.getElementById("tstm-img-ctn").innerHTML = "";
@@ -404,7 +404,7 @@
                                 // Slide In New Image
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
                                     <a href="http://www.sfmusictech.com/hackathon/" target="_blank">
-                                        <img src="img/logo-musictech-150w-10kb.jpg" id="tstm-img" class="tstm-img-slide-in logo-musictech">  
+                                        <img src="img/` + tstmSlider.tstm.musictech.image + `" id="tstm-img" class="tstm-img-slide-in logo-musictech musictech-summit">  
                                     </a>                           
                                 `;
                             }, 1500);
@@ -426,7 +426,7 @@
                                 document.getElementById("tstm-img-ctn").innerHTML = "";
 
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
-                                    <img src="img/logo-musictech-219w-17kb.jpg" id="tstm-img" class="tstm-img-slide-out">                            
+                                    <img src="img/` + tstmSlider.tstm.musictech.image + `" id="tstm-img" class="tstm-img-slide-out musictech-summit">                            
                                 `;
                                 setTimeout(function () {
                                     document.getElementById("tstm-img-ctn").innerHTML = "";
@@ -443,7 +443,7 @@
                                 // Slide In New Image
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
                                     <a href="https://shape.att.com/" target="_blank">
-                                        <img src="img/logo-shape-att-331w-4kb.jpg" id="tstm-img" class="tstm-img-slide-in">  
+                                        <img src="img/` + tstmSlider.tstm.shapeATT.image + `" id="tstm-img" class="tstm-img-slide-in shape-att">  
                                     </a>                            
                                 `;
                             }, 1500);
@@ -464,8 +464,8 @@
                                 document.getElementById("tstm-ctn").innerHTML = "";
                                 document.getElementById("tstm-img-ctn").innerHTML = "";
 
-                                document.getElementById("tstm-img-ctn").innerHTML = ` 
-                                    <img src="img/logo-shape-att-331w-4kb.jpg" id="tstm-img" class="tstm-img-slide-out">                            
+                                document.getElementById("tstm-img-ctn").innerHTML = `  
+                                    <img src="img/` + tstmSlider.tstm.shapeATT.image + `" id="tstm-img" class="tstm-img-slide-out shape-att">                           
                                 `;
                                 setTimeout(function () {
                                     document.getElementById("tstm-img-ctn").innerHTML = "";
@@ -482,7 +482,7 @@
                                 // Slide In New Image
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
                                     <a href="https://www.sxsw.com/conference/sxsw-hackathon/" target="_blank">
-                                        <img src="img/logo-sxsw-255w-4kb.png" id="tstm-img" class="tstm-img-slide-in"> 
+                                        <img src="img/` + tstmSlider.tstm.sxsw.image + `" id="tstm-img" class="tstm-img-slide-in"> 
                                     </a>                     
                                 `;
                             }, 1500);
@@ -509,7 +509,7 @@
                                 document.getElementById("tstm-img-ctn").innerHTML = "";
 
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
-                                    <img src="img/logo-sxsw-255w-4kb.png" id="tstm-img" class="tstm-img-slide-out">                            
+                                    <img src="img/` + tstmSlider.tstm.sxsw.image + `" id="tstm-img" class="tstm-img-slide-out">                            
                                 `;
                                 setTimeout(function () {
                                     document.getElementById("tstm-img-ctn").innerHTML = "";
@@ -525,8 +525,8 @@
                                 `;
                                 // Slide In New Image
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
-                                    <a href="https://shape.att.com/" target="_blank">
-                                        <img src="img/logo-shape-att-331w-4kb.jpg" id="tstm-img" class="tstm-img-slide-in">  
+                                    <a href="https://shape.att.com/" target="_blank"> 
+                                        <img src="img/` + tstmSlider.tstm.shapeATT.image + `" id="tstm-img" class="tstm-img-slide-in shape-att">  
                                     </a>                                                                
                                 `;
                             }, 1500);
@@ -547,7 +547,7 @@
                                 document.getElementById("tstm-img-ctn").innerHTML = "";
 
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
-                                    <img src="img/logo-musictech-219w-17kb.jpg" id="tstm-img" class="tstm-img-slide-out">                            
+                                    <img src="img/` + tstmSlider.tstm.musictech.image + `" id="tstm-img" class="tstm-img-slide-out">                            
                                 `;
                                 setTimeout(function () {
                                     document.getElementById("tstm-img-ctn").innerHTML = "";
@@ -564,7 +564,7 @@
                                 // Slide In New Image
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
                                     <a href="https://www.sxsw.com/conference/sxsw-hackathon/" target="_blank">
-                                        <img src="img/logo-sxsw-255w-4kb.png" id="tstm-img" class="tstm-img-slide-in"> 
+                                        <img src="img/` + tstmSlider.tstm.sxsw.image + `" id="tstm-img" class="tstm-img-slide-in"> 
                                     </a>                                                                 
                                 `;
                             }, 1500);
@@ -585,7 +585,7 @@
                                 document.getElementById("tstm-img-ctn").innerHTML = "";
 
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
-                                    <img src="img/logo-shape-att-331w-4kb.jpg" id="tstm-img" class="tstm-img-slide-out">                            
+                                    <img src="img/` + tstmSlider.tstm.shapeATT.image + `" id="tstm-img" class="tstm-img-slide-out shape-att">                            
                                 `;
                                 setTimeout(function () {
                                     document.getElementById("tstm-img-ctn").innerHTML = "";
@@ -602,7 +602,7 @@
                                 // Slide In New Image
                                 document.getElementById("tstm-img-ctn").innerHTML = ` 
                                     <a href="http://www.sfmusictech.com/hackathon/" target="_blank">
-                                        <img src="img/logo-musictech-150w-10kb.jpg" id="tstm-img" class="tstm-img-slide-in logo-musictech">  
+                                        <img src="img/` + tstmSlider.tstm.musictech.image + `" id="tstm-img" class="tstm-img-slide-in logo-musictech">  
                                     </a>                            
                                 `;
                             }, 1500);
@@ -612,7 +612,7 @@
                 }
             }
         }
-
+        console.log("tstmSlider.tstm.musictech.image: ", tstmSlider.tstm.musictech.image)
         tstmSlider.next.el.addEventListener("click", () => {
             tstmSlider.next.loadContent();
         });
