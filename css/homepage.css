@@ -779,7 +779,7 @@
         margin: 0 15px 5px 0;
     }
 }
-@media(max-width: 970px){
+@media(max-width: 1100px){
     /* 
      * Header
      */
@@ -792,6 +792,7 @@
     }
     .header .content img {    
         width: 400px;
+        margin: 0 auto 20px auto;
     }
     .header .make-music-be-heard{
         top: 50px;
@@ -851,7 +852,7 @@
     .demo .webApp #demoMobile {
         left: calc(50% - 200px);
         width: 400px;
-        top: -235px;
+        top: -180px;
     }
     .demo .webApp #demoMobile .content {
         width: 300px;
@@ -863,6 +864,9 @@
     }
     .demo .webApp #demoMobile .content span {
         font-size: 20px;
+    }
+    .demo .webApp #demoMobile .try-it {
+        margin: 0 auto 15px auto;
     }
     /* ***************
     *   Credibility
