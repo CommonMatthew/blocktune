@@ -345,8 +345,11 @@
     margin: 0 auto;
 }
 .credibility .testimonials .sxsw-wrp .logo-musictech {
-        max-width: 150px;
-    }
+    max-width: 150px;
+}
+.credibility .testimonials .sxsw-wrp .shape-att {
+    margin: 50px auto auto auto;
+}
 .credibility .testimonials .sxsw-wrp .content { 
     display: inline-block;
     width: 49.9%;
