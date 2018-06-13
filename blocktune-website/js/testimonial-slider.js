@@ -238,7 +238,7 @@ testimonialNextSlide.addEventListener("click", () => {
         testimonialNextSlide.style.marginLeft = "0px";
         testimonialNextSlide.style.width = "101px";
         testimonialNextSlide.style.height = "101px"; 
-    }, 400);
+    }, 300);
 });
 
 const testimonialPreviousSlide = document.getElementById("arrowPreviousTestimonials");
@@ -254,7 +254,7 @@ testimonialPreviousSlide.addEventListener("click", () => {
         testimonialPreviousSlide.style.marginRight = "0px";
         testimonialPreviousSlide.style.width = "101px";
         testimonialPreviousSlide.style.height = "101px";
-    }, 400);
+    }, 300);
 
 });
 
