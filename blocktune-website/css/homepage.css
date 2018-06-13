@@ -320,21 +320,25 @@
 .credibility .testimonials .arrows-wrp .right { 
     margin-top: 50.5px;
 }
-.credibility .testimonials h1 {
+.credibility .testimonials .title {
     display: block;
     font-family: var(--Font-Family-Primary);
     color: var(--Color-Primary);
     text-align: center;
     font-size: 36px;
     letter-spacing: 3px;
-    margin: 173px auto 0 auto;
     padding: 0 20px;
+}
+.credibility .testimonials .title { 
+    margin-top: 150px;
 }
 .credibility .testimonials .sxsw-wrp { 
     position: relative;
     display: block;
     width: 80%;
     margin: 112px auto 20px 10%;
+
+    border: 1px solid red;
 }
 .credibility .testimonials .sxsw-wrp .img-ctn { 
     width: 49%;
@@ -351,7 +355,7 @@
     margin: 50px auto auto auto;
 }
 .credibility .testimonials .sxsw-wrp .content { 
-    display: inline-block;
+    /* display: inline-block;
     width: 49.9%;
     height: 100%;
     font-size: 36px;
@@ -360,106 +364,137 @@
     line-height: 1.25;
     letter-spacing: 3px;
     color: var(--Color-Primary);
+    font-family: var(--Font-Family-Tertiary); */
+}
+
+#slider-wrp {
+    width: 750px;
+    height: 250px;
+    margin: 50px auto 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+#testimonialContentContainer { 
+    /* display: inline-block; */
+    /* width: 49.9%;
+    height: 100%; */
+    font-size: 36px;
+    /* font-weight: 200; */
+    font-style: italic;
+    line-height: 1.25;
+    letter-spacing: 3px;
+    color: var(--Color-Primary);
     font-family: var(--Font-Family-Tertiary);
+    margin-left: 5%;
 }
-.test1 {
-    display: block;
-    width: 0px;
-    animation: tstmSlidein 0.5s forwards;
-    animation-delay: 1s;
-
-    border: 1px solid red;
+#testimonialContentContainer h1 {
+    margin-top: 35px;
 }
-
-#tstm-constent {
-    display: block;
-    width: 200%;
-    font-family: var(--Font-Family-Tertiary);
-    animation: tstmSlidein 0.5s forwards;
-}
-
-@keyframes tstmSlidein {
-    from {
-        margin-left: 100%;
-        width: 300%;
-        opacity: 0;
-    }
-
-    to {
-        margin-left: 0%;
-        width: 100%;
-        opacity: 1;
-    }
-}
-#tstm-constent2 {
-    display: block;
-    width: 200%;
-    animation: tstmSlideOutContent 1s forwards;
-}
-@keyframes tstmSlideOutContent {
-    from {
-        margin-left: 0%;
-        width: 100%;
-        opacity: 1;
-    }
-    to {
-        margin-left: 100%;
-        width: 200%;
-        opacity: 0;
-    }
-}
-.tstm-img-slide-out {
-    display: block;
-    animation: tstm-img-slide-out 0.7s cubic-bezier(.81,.29,.41,.94);
-}
-@keyframes tstm-img-slide-out {
-    from {
-        /* margin-right: auto;  */
-        width: 200px;
-        opacity: 1;
-    }
-    to {
-        /* margin-right: 100%; */
-        width: 0px;
-        opacity: 0;
-    }
-}
-.tstm-img-slide-in {
-    display: block;
-    animation: tstm-img-slide-in 0.8s cubic-bezier(.19,.93,.67,.71);
-}
-@keyframes tstm-img-slide-in {
-    from {
-        width: 0px;
-        opacity: 1;
-    }
-    to {
-        width: 200px;
-        opacity: 0;
-    }
-}
-.slideIn2 {
-    display: block;
-    animation: tstmSlidein 0.5s ease-in forwards;
-    animation-delay: 2s;
-}
-@keyframes tstmSlidein {
-    from {
-        margin-left: 100%;
-        width: 300%;
-        opacity: 0;
-    }
-
-    to {
-        margin-left: 0%;
-        width: 100%;
-        opacity: 1;
-    }
-}
-.DoNotDisplay {
+#slider-wrp .slide { 
     display: none;
-    animation: none;
 }
+#slider-wrp div {
+    width: 47%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    
+    /* border: 1px solid blue; */
+}
+#slider-wrp div h1 { 
+    text-align: left;
+}
+#slider-wrp div img { 
+    width: 200px;
+    float: right;
+}
+.imgSlideIn img {
+    animation-name: slideInFromLeft;
+    animation-duration: 1s;
+}
+.tstmSlideIn img{
+    animation-name: tstmSlideInFromLeft;
+    animation-duration: 1s;
+}
+.tstmSlideOut img{
+    animation-name: tstmSlideOutToLeft;
+    animation-duration: 1s;
+}
+.slideInRight h1 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation-duration: 1s;
+    animation-name: tstmSlideInFromRight;
+}
+.slideOutRight h1 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation-duration: 1s;
+    animation-name: tstmSlideOutRight;
+}
+@keyframes tstmSlideInFromRight {
+    from {
+        margin-left: 100%;
+        width: 300%;
+        opacity: 0;
+    }
+    to {
+        margin-left: 0%;
+        width: 100%;
+        opacity: 1;
+    }
+}
+@keyframes tstmSlideOutRight {
+    from {
+        margin-left: 0%;
+        width: 100%;
+        opacity: 1;
+    }
+    to {
+        margin-left: 100%;
+        width: 300%;
+        opacity: 0;
+    }
+}
+@keyframes tstmSlideInFromLeft {
+    from {
+        margin-right: 100%;
+        opacity: 0;
+    }
+    to {
+        margin-right: 0%;
+        opacity: 1;
+    }
+}
+@keyframes tstmSlideOutToLeft {
+    from {
+        margin-right: 0%;
+        opacity: 1;
+    }
+    to {
+        margin-right: 100%;
+        opacity: 0;
+    }
+}
+
+.sxsw-logo {
+    margin-top: 50px;
+}
+.musictech-logo-tstm {
+    margin-top: 35px;
+}
+.shapeAtt-logo-tstm {
+    margin-top: 100px;
+}
+
+
+
+
+
+
 
 .credibility .testimonials .sxsw-wrp .content .line {
     display: block;
