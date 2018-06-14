@@ -27,6 +27,12 @@ header .row a {
     padding: 10px 40px;
     margin: 20px auto 0 auto;
 }
+
+.login-container-general {
+    width: 140px;
+    display: none;
+}
+
 .step {
     width: 1164px;
     margin: 0 auto 300px auto;
@@ -84,6 +90,7 @@ header .row a {
 .step .row .content-left p{ 
     text-align: left;
 }
+
 @media (max-width: 1200px) {
     .step {
         width: 90%;
@@ -107,6 +114,7 @@ header .row a {
         margin: 50px 0 0 0;
     }
 }
+
 @media (max-width: 992px) {
     header .row h1 {
         font-size: 7vw;
@@ -119,7 +127,12 @@ header .row a {
         padding: 1vw 4vw;
     }
 }
+
 @media (max-width: 768px){
+    .login-container-general {
+        display: block;
+        margin: 45px 35px;
+    }
     .step .row .content-right {
         padding-right: 11vw;
     }
@@ -140,6 +153,7 @@ header .row a {
         font-size: 3.2vw;
     }
 }
+
 @media (max-width: 576px) { 
     header .row h1 {
         font-size: 7vw;

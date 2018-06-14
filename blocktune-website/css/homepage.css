@@ -62,65 +62,13 @@
     letter-spacing: 3px;
     color: var(--Color-Primary);
 }
-/* Header
- *    - Login
- */
-.header .login{
+
+.login-container-homepage{
     position: absolute;
-    width: 140px;
-    height: auto;
     top: 107px;
     left: 195px;
-    display: flex;
-    flex-wrap: wrap;
-    color: white;
 }
-.header .login a{
-    font-size: 24px;
-    font-family: var(--Font-Family-Primary);
-    letter-spacing: 0.7px;
-    color: var(--Color-Primary);
-}
-.header .login div{
-    float: left;
-}
-.header .login .line-ctn{
-    padding-top: 8px;
-    width: 45px;
-}
-.header .login .line-ctn div{
-    height: 5px;
-    width: 35px;
-    border-bottom: 3px solid #7350cc;
-}
-/* Header
- *    - Social Media
- */
-/* .header .socialmedia {
-    position: absolute;
-    bottom: 158px;
-    left: 195px;
-    font-size: 24px;
-    color: var(--Color-Primary);
-    font-family: var(--Font-Family-Secondary);
-    letter-spacing: 0.7px;
-}
-.header .socialmedia div {
-    display: inline-block;
-}
-.header .socialmedia .line {
-    width: 94px;
-    height: 18px;
-    margin: 0 20px 0px 20px;
-    padding-top: 10px;
-    border-bottom: 1px solid white;
-}
-.header .socialmedia img {
-    margin-right: 20px;
-} */
-/* Header
- *    - Learn More
- */
+
 .header .learn-more {
     position: absolute;
     width: 120px;
@@ -354,18 +302,6 @@
 .credibility .testimonials .sxsw-wrp .shape-att {
     margin: 50px auto auto auto;
 }
-.credibility .testimonials .sxsw-wrp .content { 
-    /* display: inline-block;
-    width: 49.9%;
-    height: 100%;
-    font-size: 36px;
-    font-weight: 500;
-    font-style: italic;
-    line-height: 1.25;
-    letter-spacing: 3px;
-    color: var(--Color-Primary);
-    font-family: var(--Font-Family-Tertiary); */
-}
 /* Testimonail Slider */
 #slider-wrp {
     width: 750px;
@@ -410,8 +346,6 @@
 
     /* border: 1px solid blue; */
 }
-
-
 /* Right Column */
 #slider-wrp .slideInRight img {
     /* float: left; */
@@ -471,7 +405,6 @@
         opacity: 0;
     }
 }
-
 /* .sxsw-logo {
     margin-top: 20px;
 } */
@@ -486,12 +419,6 @@
 #slider-wrp #tstmLeftCol .shapeAtt-logo-tstm {
     margin-top: 90px;
 }
-
-
-
-
-
-
 
 .credibility .testimonials .sxsw-wrp .content .line {
     display: block;
@@ -527,9 +454,7 @@
 .logo-techcrunch {
     padding-top: 20px;
 }
-/* Credibility
- *    - Capitol Studios
- */
+
 .credibility .capitol-studios {
     position: relative;
     height: 967px;
@@ -582,9 +507,7 @@
     margin-left: calc(100% - 400px);
     float: right;
 }
-/* ***************
-*   Collection
-***************** */
+
 .collection {
     height: 1080px;
     background: url("../img/bg-music-collection-1920w-236kb.jpg") no-repeat center top;
@@ -666,44 +589,8 @@
     border-right: 1px solid var(--Color-Primary);
     margin: 15px auto 0 auto;
 }
-/* ***************
-*   Footer
-***************** */
-.footer {
-    height: 143px;
-    background-color: white;
-}
-.footer .logo-ctn img { 
-    margin: 48px 0 0 59px;
-}
-.footer .copyright {
-    position: absolute;
-    left: calc(50% - 75px);
-    width: 250px;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--Color-Tertiary);
-    font-family: var(--Font-Family-Secondary);
-    top: 60px;
-}
-.footer .links {
-    position: absolute;
-    right: 30px;
-    top: 60px;
-    width: 440px;
-}
-.footer .links div {
-    display: inline-block;
-    margin-right: 20px;
-    margin-right: 30px;
-}
-.footer .links div a {
-    font-family: var(--Font-Family-Secondary);
-    font-size: 18px;
-    font-weight: 500;
-    color: var(--Color-Tertiary);
-}
+
+
 @media(max-width: 1980px){
     /* **********
     *   Demo 
@@ -783,27 +670,6 @@
     .collection .logo-universal { 
         right: 50px;
     }
-    /* .footer ul li {
-        width: 45%;
-    } */
-    .footer .logo-ctn img { 
-        width: 200px;
-    }
-    .footer .copyright {
-        font-size: 16px;
-        top: 60px;
-    }
-    .footer .links {
-        right: 0px;
-        top: 60px;
-        width: 350px;
-    }
-    .footer .links div {
-        margin-right: 15px;
-    }
-    .footer .links div a {
-        font-size: 16px;
-    }
 }
 @media(max-width: 1280px){
     .header .content img {    
@@ -823,16 +689,6 @@
     }
     #slider-wrp #tstmLeftCol img {
         max-width: 250px;
-    }
-    .footer .links {
-        right: 50px;
-        top: 20px;
-        width: 150px;
-    }
-    .footer .links div {
-        width: 100%;
-        display: block;
-        margin: 0 15px 5px 0;
     }
 }
 @media(max-width: 1100px){
