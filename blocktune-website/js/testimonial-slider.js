@@ -1,5 +1,5 @@
 const tstm = {
-    // Working
+
     currentSlide: 0,
     currentImage: 0,
     targetSlideNumber: 0,
