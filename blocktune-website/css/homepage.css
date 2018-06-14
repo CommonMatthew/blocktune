@@ -366,14 +366,16 @@
     color: var(--Color-Primary);
     font-family: var(--Font-Family-Tertiary); */
 }
-
+/* Testimonail Slider */
 #slider-wrp {
     width: 750px;
     height: 250px;
-    margin: 50px auto 0 auto;
+    margin: 130px auto 0 auto;
     display: flex;
     flex-wrap: wrap;
     overflow: hidden;
+/* 
+    border: 1px solid red; */
 }
 #testimonialContentContainer { 
     /* display: inline-block; */
@@ -388,9 +390,15 @@
     font-family: var(--Font-Family-Tertiary);
     margin-left: 5%;
 }
-#testimonialContentContainer h1 {
-    margin-top: 35px;
+#slider-wrp #testimonialContentContainer img {
+   float: left;
+   margin-top: 25px;
 }
+#slider-wrp #tstmLeftCol img {
+    float: right;
+    max-width: 250px;
+    margin-top: 0;
+ }
 #slider-wrp .slide { 
     display: none;
 }
@@ -399,65 +407,49 @@
     height: 100%;
     float: left;
     overflow: hidden;
-    
+
     /* border: 1px solid blue; */
 }
-#slider-wrp div h1 { 
-    text-align: left;
-}
-#slider-wrp div img { 
-    width: 200px;
-    float: right;
-}
-.imgSlideIn img {
-    animation-name: slideInFromLeft;
-    animation-duration: 1s;
-}
-.tstmSlideIn img{
-    animation-name: tstmSlideInFromLeft;
-    animation-duration: 1s;
-}
-.tstmSlideOut img{
-    animation-name: tstmSlideOutToLeft;
-    animation-duration: 1s;
-}
-.slideInRight h1 {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+
+
+/* Right Column */
+#slider-wrp .slideInRight img {
+    /* float: left; */
     animation-duration: 1s;
     animation-name: tstmSlideInFromRight;
 }
-.slideOutRight h1 {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+#slider-wrp .slideOutRight img {
     animation-duration: 1s;
     animation-name: tstmSlideOutRight;
 }
 @keyframes tstmSlideInFromRight {
     from {
         margin-left: 100%;
-        width: 300%;
         opacity: 0;
     }
     to {
         margin-left: 0%;
-        width: 100%;
         opacity: 1;
     }
 }
 @keyframes tstmSlideOutRight {
     from {
         margin-left: 0%;
-        width: 100%;
         opacity: 1;
     }
     to {
         margin-left: 100%;
-        width: 300%;
         opacity: 0;
     }
+}
+/* Left Column */
+#slider-wrp div .tstmSlideIn img{
+    animation-duration: 1s;
+    animation-name: tstmSlideInFromLeft;
+}
+.tstmSlideOut img{    
+    animation-duration: 1s;
+    animation-name: tstmSlideOutToLeft;
 }
 @keyframes tstmSlideInFromLeft {
     from {
@@ -480,14 +472,19 @@
     }
 }
 
-.sxsw-logo {
-    margin-top: 50px;
+/* .sxsw-logo {
+    margin-top: 20px;
+} */
+#slider-wrp #testimonialContentContainer img.sxsw-content {
+    /* margin-top: 40px; */
+
+    /* border: 1px solid red; */
 }
-.musictech-logo-tstm {
+/* .musictech-logo-tstm {
     margin-top: 35px;
-}
-.shapeAtt-logo-tstm {
-    margin-top: 100px;
+} */
+#slider-wrp #tstmLeftCol .shapeAtt-logo-tstm {
+    margin-top: 90px;
 }
 
 
@@ -762,6 +759,24 @@
         bottom: -25%;
         padding: 4% 9% 5% 9%;
     }
+    /* Testimonials Slider */
+    #slider-wrp {
+        width: 100%;
+    }
+    #slider-wrp #tstmLeftCol img {
+        max-width: 200px;
+    }
+    #slider-wrp #testimonialContentContainer img {
+        margin-top: 15px;
+        max-width: 250px;
+    }
+    #slider-wrp #tstmLeftCol .shapeAtt-logo-tstm {
+        margin-top: 70px;
+    }
+    #slider-wrp #tstmLeftCol a .musictech-logo-tstm {
+        max-width: 170px;
+    }
+
     .collection .content-left { 
         margin: 180px 0 0 50px;
     }
@@ -803,6 +818,12 @@
     }
 }
 @media(max-width: 1100px){
+    #slider-wrp #testimonialContentContainer img {
+        max-width: auto;
+    }
+    #slider-wrp #tstmLeftCol img {
+        max-width: 250px;
+    }
     .footer .links {
         right: 50px;
         top: 20px;
@@ -1084,6 +1105,37 @@
         width: 90%;
         font-size: 16px;
     }
+    /* Testimonial Slider */
+    .credibility .testimonials {
+        height: 887px;
+    }
+    #slider-wrp {
+        width: 400px;
+        height: 320px;
+        margin: 50px auto 0 auto;
+    }
+    #slider-wrp div {
+        width: 68%;
+        height: 170px;
+        float: none;
+        display: block;
+    }
+    #slider-wrp #tstmLeftCol img {
+        max-width: 200px;
+    }
+    #testimonialContentContainer { 
+        margin-left: 18%;
+    }
+    #slider-wrp #testimonialContentContainer img {
+        margin-top: 0;
+    }
+    #slider-wrp #tstmLeftCol a .musictech-logo-tstm {
+        max-width: 150px;
+    }
+    #slider-wrp #testimonialContentContainer img {
+        max-width: 230px;
+    }
+
     /* ***************
     *   Collection
     ***************** */
@@ -1186,6 +1238,24 @@
     .credibility .testimonials .companies-wrp div { 
         width: 49%;
         margin-bottom: 30px;
+    }
+    /* Testimonial Slider */
+    #slider-wrp {
+        width: 300px;
+        height: 320px;
+        /* margin: 50px auto 0 auto; */
+    }
+    #slider-wrp #tstmLeftCol img {
+        max-width: 170px;
+    }
+    #slider-wrp div {
+        width: 80%;
+        /* height: 170px; */
+        /* float: none;
+        display: block; */
+    }
+    #testimonialContentContainer { 
+        margin-left: 10%;
     }
     /* ***************
     *   Credibility

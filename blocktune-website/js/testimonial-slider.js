@@ -4,7 +4,7 @@ const tstm = {
     currentImage: 0,
     targetSlideNumber: 0,
     targetImageNo: 0,
-    nextSlideDelay: 1000,
+    nextSlideDelay: 700,
 
     contentList: document.getElementsByClassName("testimonialContent"),
     imagesList: document.getElementsByClassName("tstmImg"),
@@ -13,8 +13,10 @@ const tstm = {
     leftColTargetContainer: document.getElementById("tstmLeftCol"),
 
     initialContentLoad: () => {
-        const content = tstm.contentList[0].textContent;
-        tstm.righColTargetContainer.innerHTML = "<h1>" + content + "</h1>";
+        const content = tstm.contentList[0].innerHTML;
+        tstm.righColTargetContainer.innerHTML = content;
+
+        console.log("initialContentLoad content: ", content);
     },
 
     initialImageLoad: () => {
@@ -39,11 +41,11 @@ const tstm = {
     rightCol: {
 
         slideOutContent: () => {
-            const content = tstm.righColTargetContainer.textContent;
+            const content = tstm.righColTargetContainer.innerHTML;
             tstm.righColTargetContainer.innerHTML = "";
             tstm.righColTargetContainer.classList.remove("slideInRight");
             tstm.righColTargetContainer.classList.add("slideOutRight");
-            tstm.righColTargetContainer.innerHTML = "<h1>" + content + "</h1>";
+            tstm.righColTargetContainer.innerHTML = content;
 
             setTimeout(() => {
                 tstm.righColTargetContainer.innerHTML = "";
@@ -51,11 +53,11 @@ const tstm = {
         },
 
         slideInPreviousSlide: () => {
-            const content = tstm.righColTargetContainer.textContent;
+            const content = tstm.righColTargetContainer.innerHTML;
             tstm.righColTargetContainer.innerHTML = "";
             tstm.righColTargetContainer.classList.remove("slideInRight");
             tstm.righColTargetContainer.classList.add("slideOutRight");
-            tstm.righColTargetContainer.innerHTML = "<h1>" + content + "</h1>";
+            tstm.righColTargetContainer.innerHTML = content;
 
             setTimeout(() => {
                 tstm.righColTargetContainer.innerHTML = "";
@@ -227,34 +229,36 @@ const tstm = {
 }
 
 const testimonialNextSlide = document.getElementById("arrowNextTestimonials");
-testimonialNextSlide.addEventListener("click", () => {
-    tstm.nextSlide();
+testimonialNextSlide.addEventListener("click", () => {    
 
-    testimonialNextSlide.style.marginLeft = "11px";
+    testimonialNextSlide.style.marginRight = "11px";
     testimonialNextSlide.style.width = "90px"; 
     testimonialNextSlide.style.height = "90px"; 
 
+    tstm.nextSlide();
+
     setTimeout( () => {
-        testimonialNextSlide.style.marginLeft = "0px";
+        testimonialNextSlide.style.marginRight = "0px";
         testimonialNextSlide.style.width = "101px";
         testimonialNextSlide.style.height = "101px"; 
-    }, 300);
+    }, 200);
 });
 
 const testimonialPreviousSlide = document.getElementById("arrowPreviousTestimonials");
-testimonialPreviousSlide.addEventListener("click", () => {
-    tstm.rightCol.slideInPreviousSlide();
-    tstm.previousSlide();
+testimonialPreviousSlide.addEventListener("click", () => {    
 
-    testimonialPreviousSlide.style.marginRight = "11px";
+    testimonialPreviousSlide.style.marginLeft = "11px";
     testimonialPreviousSlide.style.height = "90px";
     testimonialPreviousSlide.style.width = "90px";
 
+    tstm.rightCol.slideInPreviousSlide();
+    tstm.previousSlide();
+
     setTimeout(() => {
-        testimonialPreviousSlide.style.marginRight = "0px";
+        testimonialPreviousSlide.style.marginLeft = "0px";
         testimonialPreviousSlide.style.width = "101px";
         testimonialPreviousSlide.style.height = "101px";
-    }, 300);
+    }, 200);
 
 });
 
