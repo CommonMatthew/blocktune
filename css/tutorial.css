@@ -5,7 +5,7 @@ header {
     color: white;
     text-align: center;
     font-family: var(--Font-Family-Primary);
-    margin: 300px auto;
+    margin: 100px auto 300px auto;
 }
 header .row h1 {
     width: 100%;
@@ -116,6 +116,11 @@ header .row a {
 }
 
 @media (max-width: 992px) {
+    .login-container-general {
+        display: block;
+        float: left;
+        margin-left: 50px;
+    }
     header .row h1 {
         font-size: 7vw;
     }
@@ -130,8 +135,7 @@ header .row a {
 
 @media (max-width: 768px){
     .login-container-general {
-        display: block;
-        margin: 45px 35px;
+        margin-left: 30px;
     }
     .step .row .content-right {
         padding-right: 11vw;
@@ -165,5 +169,8 @@ header .row a {
     header .row a {
         font-size: 3vw;
         padding: 2vw 10vw;
+    }
+    .login-container-general {
+        margin-left: 15px;
     }
 }
