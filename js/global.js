@@ -19,6 +19,22 @@ const loginHTML = `
     </div>
 `;
 
+const socialMedia = `
+    <div class="socialmedia">
+        <div>Follow</div>
+        <div class="line">&nbsp;</div>
+        <a href="https://www.facebook.com/commonedits" target="_blank">
+            <img src="img/logo-facebook-20w-170B.png" alt="">
+        </a>
+        <a href="https://twitter.com/commonedits" target="_blank">
+            <img src="img/logo-twitter-20w-333B.png" alt="">
+        </a>
+        <a href="https://www.instagram.com/commonedits/" target="_blank">
+            <img src="img/logo-instagram-20w-247B.png" alt="">
+        </a>   
+    </div>
+`;
+
 const footerHTML = `
     <div class="logo-ctn">
         <a href="index.html">

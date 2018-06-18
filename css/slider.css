@@ -1,0 +1,11 @@
+.sliderSplash {
+    max-width: 1920px;
+    height: 100vh;
+    background-size: cover;
+
+    border: 1px solid red;
+}
+
+.autoplay div {
+    background-color: white;
+}

@@ -113,7 +113,7 @@ input:focus {
     width: 94px;
     height: 18px;
     margin: 0 20px 0px 20px;
-    padding-top: 10px;
+    padding-top: 0px;
     border-bottom: 1px solid white;
 }
 .socialmedia img {
@@ -131,7 +131,7 @@ input:focus {
     max-width: 1500px;
     margin: 0 auto;
     color: white;
-    margin: 25px auto 0 auto;
+    margin: 100px auto 0 auto;
     height: 70px;
 }
 .nav-two .logo {
@@ -197,6 +197,11 @@ input:focus {
     width: 35px;
     margin-top: 3px;
     border-bottom: 3px solid #7350cc;
+}
+
+.login-container-general {
+    width: 140px;
+    display: none;
 }
 
 .footer {
@@ -340,6 +345,11 @@ input:focus {
         width: 250px;  
         margin-right: 50px;
     }
+    .login-container-general {
+        display: block;
+        float: left;
+        margin-left: 50px;
+    }
     .paragraph-header-v2 {
         font-size: 2.5vw;
     }
@@ -350,6 +360,11 @@ input:focus {
     .Paragraph-V2 {
         font-size: 2vw;
         
+    }
+}
+@media(max-width: 768px){
+    .login-container-general {
+        margin-left: 30px;
     }
 }
 @media(max-width: 750px){

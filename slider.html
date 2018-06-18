@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="css/global.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+    <link rel="stylesheet" type="text/css" href="lib/slick-1.8.1/slick/slick.css" /> 
+    <link rel="stylesheet" type="text/css" href="lib/slick-1.8.1/slick/slick-theme.css" />
+    <title>Slider</title>
+</head>
+<body>
+
+    <script src="js/global.js"></script>
+
+
+
+    <div class="sliderSplash" id="pageBg">
+
+        <div class="nav-two">
+        
+            <div class="login-container-general">
+                <script>
+                    document.write(loginHTML);
+                </script>
+            </div>
+        
+            <img src="img/logo-block-tune-343w-10kb.png" class="logo" alt="">
+        
+            <div class="links-ctn constainer">
+                <div class="row">
+                    <div class="col-md-3 col-lg-3 col-xl-3">
+                        <a href="#" class="reg">
+                            Discover
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-lg-3 col-xl-3">
+                        <a href="#" class="reg">
+                            Log In
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-6">
+                        <a href="#" class="tryItNow">
+                            Try It Now
+                        </a>
+                    </div>
+                </div>
+            </div>        
+        </div>
+
+        <!-- Social Media -->
+        <script>
+            document.write(socialMedia);
+        </script>
+
+        <div class="autoplay">
+            <div>your content</div>
+            <div>your content</div>
+            <div>your content</div>
+        </div>
+
+    </div>
+
+
+    <script>
+        const slider = {
+            bgImageContainerElement: document.getElementById("pageBg"), 
+            initialBgImage: "bg-slider-singing-1920w-220kb.jpg",
+
+            loadImage: () => {
+                //slider.bgImageContainerElement.style.backgroundImage = ' url("../img/' + slider.initialBgImage + '") no - repeat center top';
+                slider.bgImageContainerElement.style.backgroundImage = 'url("img/' +slider.initialBgImage + '")';
+            }
+        }
+        // url("../img/bg-capitol-blocktune-960-w30kb.jpg") no - repeat center top
+
+        slider.loadImage();
+
+    </script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/jquery-migrate-1-2-1.js"></script>
+
+    <script type="text/javascript" src="lib/slick-1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+        $('.autoplay').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+        });
+    </script>
+</body>
+</html>
