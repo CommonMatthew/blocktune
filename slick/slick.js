@@ -405,11 +405,16 @@
     };
 
     Slick.prototype.autoPlayIterator = function() {
-
+        
         var _ = this,
             slideTo = _.currentSlide + _.options.slidesToScroll;
+        
 
         if ( !_.paused && !_.interrupted && !_.focussed ) {
+            // console.log("Sliding");
+            // slider.getSlideImage();
+            slider.setNextActiveNavDot();
+            // console.log("slider.TrackerActiveNavDot: ", slider.TrackerActiveNavDot);
 
             if ( _.options.infinite === false ) {
 
@@ -430,6 +435,7 @@
             }
 
             _.slideHandler( slideTo );
+            
 
         }
 
@@ -698,13 +704,16 @@
 
         unevenOffset = (_.slideCount % _.options.slidesToScroll !== 0);
         indexOffset = unevenOffset ? 0 : (_.slideCount - _.currentSlide) % _.options.slidesToScroll;
-
+        
         switch (event.data.message) {
+
+                    
 
             case 'previous':
                 slideOffset = indexOffset === 0 ? _.options.slidesToScroll : _.options.slidesToShow - indexOffset;
                 if (_.slideCount > _.options.slidesToShow) {
                     _.slideHandler(_.currentSlide - slideOffset, false, dontAnimate);
+                    console.log("event.data.message: Inside previous");
                 }
                 break;
 
@@ -712,6 +721,7 @@
                 slideOffset = indexOffset === 0 ? _.options.slidesToScroll : indexOffset;
                 if (_.slideCount > _.options.slidesToShow) {
                     _.slideHandler(_.currentSlide + slideOffset, false, dontAnimate);
+                    console.log("Inside next");
                 }
                 break;
 
@@ -721,6 +731,7 @@
 
                 _.slideHandler(_.checkNavigable(index), false, dontAnimate);
                 $target.children().trigger('focus');
+                console.log("Inside index");
                 break;
 
             default:
