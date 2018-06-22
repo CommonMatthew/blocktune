@@ -412,8 +412,8 @@
 
         if ( !_.paused && !_.interrupted && !_.focussed ) {
             // console.log("Sliding");
-            // slider.getSlideImage();
-            slider.setNextActiveNavDot();
+            slider.getSlideImage();
+            // slider.setNextActiveNavDot();
             // console.log("slider.TrackerActiveNavDot: ", slider.TrackerActiveNavDot);
 
             if ( _.options.infinite === false ) {

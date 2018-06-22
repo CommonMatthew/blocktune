@@ -1,14 +1,14 @@
 .sliderSplash {
     max-width: 1920px;
     height: 100vh;
-    background-size: cover;
+    /* background-size: cover; */
     overflow-x: hidden;
 
 }
 #pageBg {
-    background: none;
-    background-size: cover;
-    background-position: center center;
+    /* background: none; */
+    /* background-size: cover; */
+    /* background-position: center; */
     transition: background 2s ease-in-out;
 }
 #bgImage {
@@ -16,8 +16,6 @@
     top: 0;
     left: 0;
     z-index: -5;
-    background-size: cover;
-    background-position: center center;
     animation: imageAnimation 0.8s linear;
 }
 @keyframes imageAnimation { 
@@ -40,41 +38,56 @@
         animation-timing-function: ease-in; 
     }
 }
-.navigationDots {
+.sliderNavWrapper {
     position: absolute;
+    height: 40px;
+    width: 100%;
+    bottom: 5vh;
+
+
+    /* border: 1px solid blue; */
+}
+.sliderNavWrapper .absoluteContainer {
+    /* position: relative; */
+
+    /* border: 1px solid white; */
+}
+.sliderNavWrapper .navigationDots {
+    /* position: absolute; */
     width: 180px;
     height: auto;
-    top: 800px;
-    left: calc(50% - 90px);
+    bottom: 50px;
+    margin-left: calc(50% - 90px);
 
-    border: 1px solid green;
+    /* border: 1px solid green; */
 }
-.navigationDots .item {
+.sliderNavWrapper .navigationDots .item {
     position: relative;
     width: 33%;
     float: left;
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
-.navigationDots .item .click { 
+.sliderNavWrapper .navigationDots .item .click { 
     width: 30px;
     margin: 0 auto;
 
     /* border: 1px solid blue; */
 }
-.navigationDots .item img {
+.sliderNavWrapper .navigationDots .item img {
     display: block;
     margin: 0 auto;
 }
-.horizontalLine {
-    position: absolute;
-    top: 815px;
+.sliderNavWrapper .horizontalLine {
+    /* position: absolute;
+    bottom: 11.5vh; */
     width: 100%;
     opacity: 0.43;
     z-index: -2;
+    margin-top: 15px;
     border: solid 0.5px #ffffff;
 }
-.navDotInactive {
+.sliderNavWrapper .navDotInactive {
     width: 18px;
     height: 18px;
     border: 1px solid white;
@@ -82,14 +95,17 @@
     opacity: 0.5;
     margin: 5px auto 0 auto;
 }
+.slick-dots {
+    display: none !important;
+}
 .center {
     width: 154%;
-    margin: 100px 0 0 -27%;
+    margin: 250px 0 0 -27%;
 }
 .center div {
     background-color: transparent;
     color: white;
-    height: 500px;
+    height: 200px;
     text-align: center;
 
     /* border: 1px solid white; */
@@ -97,6 +113,11 @@
 /* .slide-cai {
     border: 1px solid red;
 }  */
+.center .slide-cai .ctn { 
+
+
+    /* border: 1px solid pink; */
+}
 .center .slide-cai .ctn { 
     width: 540px;
     margin: 0 auto;
@@ -109,6 +130,7 @@
     line-height: 1.6;
     letter-spacing: 8.3px;
     text-align: center;
+    margin-top: 0;
 }
 .center .slide-cai .ctn h1 .purplePeriod { 
     position: relative;
@@ -120,15 +142,25 @@
     display: inline-block;
     margin-left: -40px;
 }
+.callToAction {
+    position: absolute;
+    width: 500px;
+    height: auto;
+    color: white;
+    text-align: center;
+    bottom: 20vh;
+    left: calc(50% - 250px);
 
-.center .slide-cai .ctn  p { 
+    /* border: 1px solid yellow; */
+}
+.callToAction  p { 
     font-family: var(--Font-Family-Secondary);
     font-size: 18px;
     font-weight: 500;
     letter-spacing: 0.5px;
     margin-bottom: 50px;
 }
-.center .slide-cai .ctn a {
+.callToAction  a {
     font-size: 24px;
     font-family: var(--Font-Family-Secondary);
     background: transparent;
@@ -141,6 +173,140 @@
 
     /* border: 1px solid red; */
 }
-.slide-cai {
-    /* border: 1px solid red !important; */
-} 
+@media (max-height: 900px) {
+    .nav-two {
+        margin: 50px auto 0 auto;
+    }
+    .center {
+        width: 154%;
+        margin: 120px 0 0 -27%;
+    }
+    .callToAction {
+        bottom: auto;
+        top: 400px;
+    }
+    .sliderNavWrapper {
+        height: 20px;
+    }
+    .socialmedia {
+        bottom: 10vh;
+    }
+}
+@media (max-height: 650px) {
+    .callToAction {
+        bottom: 7vh;
+    }
+    .sliderNavWrapper {
+        bottom: auto;
+        margin-top: 700px;
+    }
+}
+@media (max-height: 550px) {
+    .callToAction {
+        bottom: auto;
+        margin-top: 550px;
+    }
+    .sliderNavWrapper {
+        bottom: auto;
+        margin-top: 700px;
+    }
+    .socialmedia {
+        display: none;
+    }
+}
+
+@media (max-width: 1500px) {
+    .center .slide-cai .ctn h1 {
+        font-size: 80px;
+    }
+    .socialmedia {
+        left: 100px;
+    }
+}
+@media (max-width: 1200px) {
+    .center .slide-cai .ctn {
+        width: 100%;
+    }
+    .center .slide-cai .ctn h1 {
+        font-size: 50px;
+    }
+    .center .slide-cai .ctn h1 .purplePeriod {
+        width: 15px;
+        height: 15px !important;
+        margin-left: -25px;
+    }
+    .callToAction {
+        width: 400px;
+        left: calc(50% - 200px);
+    }
+    .socialmedia {
+        left: 50px;
+    }
+    .socialmedia img {
+        margin-right: 10px;
+    }
+    .socialmedia .line {
+        width: 40px;
+        height: 18px;
+        margin: 0 10px 0px 10px;
+    }
+}
+@media (max-width: 990px) {
+    .center .slide-cai .ctn h1 {
+        font-size: 50px;
+    }
+    .socialmedia {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .center {
+        width: 170%;
+        margin: 250px 0 0 -35%;
+    }
+    .center div {
+        /* width: 33%; */
+
+        /* border: 1px solid red; */
+    }
+    .center .slide-cai .ctn h1 .purplePeriod {
+        width: 10px;
+        height: 10px !important;
+        margin-left: -20px;
+    }
+    .slick-slider .slick-list .slick-track .slick-slide {
+        /* width: 70% !important; */
+
+        /* border: 1px solid blue; */
+    }
+    .center .slide-cai .ctn h1 {
+        font-size: 36px;
+    }
+    .callToAction {
+        width: 300px;
+        left: calc(50% - 150px);
+        top: 450px;
+    }
+    .callToAction p {
+        font-size: 16px;
+    }
+}
+@media (max-width: 500px) {
+    .center {
+        width: 190%;
+        margin: 250px 0 0 -45%;
+    }
+    .callToAction {
+        width: 270px;
+        left: calc(50% - 135px);
+        top: 450px;
+    }
+    .center .slide-cai .ctn h1 {
+        font-size: 6.8vw;
+    }
+}
+@media (max-width: 400px) {
+    /* .center .slide-cai .ctn h1 {
+        font-size: 6.8vw;
+    } */
+}

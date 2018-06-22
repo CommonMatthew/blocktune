@@ -129,7 +129,6 @@ input:focus {
 }
 .nav-two {
     max-width: 1500px;
-    margin: 0 auto;
     color: white;
     margin: 100px auto 0 auto;
     height: 70px;
@@ -241,6 +240,9 @@ input:focus {
     font-size: 18px;
     font-weight: 500;
     color: var(--Color-Tertiary);
+}
+@media (max-height: 900px) {
+
 }
 @media(max-width: 1920px){
     .paragraph-header-v2 {
