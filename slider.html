@@ -183,139 +183,220 @@
             }
         }
 
-
         const slider = {
 
-            bgImageElement: document.getElementById("bgImage"), 
-            initialBgImage: "bg-slider-singing-1920w-220kb.jpg",            
-            bgImageSinging: "bg-slider-singing-1920w-161kb.jpg",  
-            bgImagePublish: "bg-publish-1920w-70kb.jpg",
-            bgImageWin: "bg-win-1920w-90kb.jpg",   
+            ActiveNavDotsList: document.getElementsByClassName("navDotActive"),
+            InactiveNavDotsList: document.getElementsByClassName("navDotInactive"),
 
-            
-            allActiveNavDots: document.getElementsByClassName("navDotActive"), 
-            TrackerActiveNavDot: 0,
-            allInactiveNavDots: document.getElementsByClassName("navDotInactive"),
-            // TrackerallInactiveNavDots: 0,
-            
-
+            activeNavDot: 0,
             activeSlide: 0,
-            slideDelay: 1000,  
-            animationDelay: 100,     
+            slideDelay: 1000,
+            animationDelay: 100, 
+
+            viewportMin: {
+                xl: 1500,
+                lg: 968,
+                md: 768,
+                sm: 414,
+                active: 1500
+            },
+
+            image: {                               
+
+                record: {
+                    active: "bg-slider-singing-1920w-161kb.jpg",
+                    xl: "bg-slider-singing-1920w-161kb.jpg",  // > 1500
+                    lg: "bg-slider-singing-1515w-133kb.jpg", //  < 1500
+                    md: "bg-slider-singing-1053w-163kb.jpg",  // < 1000
+                    sm: "bg-slider-singing-840w-156kb.jpg", // < 768
+                    xm: "bg-slider-singing-414w-24kb.jpg"                                    
+                }, 
+                publish: {
+                    active: "bg-publish-1920w-70kb.jpg",
+                    xl: "bg-publish-1920w-70kb.jpg",
+                    lg: "",
+                    md: "",
+                    sm: "",
+                    xm: ""  
+                }, 
+                win: {
+                    active: "bg-win-1920w-90kb.jpg",
+                    xl: "bg-win-1920w-90kb.jpg",
+                    lg: "",
+                    md: "",
+                    sm: "",
+                    xm: ""                      
+                },
+
+                element: document.getElementById("bgImage"),
+                initialload: "bg-slider-singing-1920w-161kb.jpg" 
+            },              
 
             loadImage: (img) => {
-                slider.bgImageElement.style.display = "none";
-                slider.bgImageElement.src = '';
-
-                // console.log("allInactiveNavDots: ", slider.allInactiveNavDots);
-                // console.log("allActiveNavDots: ", slider.allActiveNavDots);
+                slider.image.element.style.display = "none";
+                slider.image.element.src = '';
 
                 setTimeout(() => {
-                    slider.bgImageElement.style.display = "block";
-                    slider.bgImageElement.src = 'img/' + img;
+                    slider.image.element.style.display = "block";
+                    slider.image.element.src = 'img/' + img;
                 }, slider.animationDelay);                          
             },
 
             getSlideImage: () => {
                 switch (slider.activeSlide) {
                     case 0:
-                        slider.loadImage(slider.bgImagePublish);
+                        slider.loadImage(slider.image.publish.active);
                         slider.activeSlide = 1;
                         break;
                     case 1:
-                        slider.loadImage(slider.bgImageWin);
+                        slider.loadImage(slider.image.win.active);
                         slider.activeSlide = 2;
                         break;
                     case 2:
-                        slider.loadImage(slider.bgImageSinging);
+                        slider.loadImage(slider.image.record.active);
                         slider.activeSlide = 0;
                         break;
                 }
             },
 
             removeActiveNavDot: () => {
-                slider.allActiveNavDots[slider.TrackerActiveNavDot].style.display = "none";
-                slider.allInactiveNavDots[slider.TrackerActiveNavDot].style.display = "block";                
+                slider.ActiveNavDotsList[slider.activeNavDot].style.display = "none";
+                slider.InactiveNavDotsList[slider.activeNavDot].style.display = "block";                
             },
 
-            removeAllActiveNavDots: () => {
-                for (let i = 0; i < slider.allActiveNavDots.length; i++) {
-                    slider.allActiveNavDots[i].style.display = "none";
+            removeActiveNavDotsList: () => {
+                for (let i = 0; i < slider.ActiveNavDotsList.length; i++) {
+                    slider.ActiveNavDotsList[i].style.display = "none";
                 }
             },
             
             setActiveNavDot: (activeDot) => {
                 slider.removeActiveNavDot();
-                slider.allInactiveNavDots[activeDot].style.display = "none";
-                slider.allActiveNavDots[activeDot].style.display = "block";
-                slider.TrackerActiveNavDot = activeDot;
-                // slider.activeSlide = activeDot;
+                slider.InactiveNavDotsList[activeDot].style.display = "none";
+                slider.ActiveNavDotsList[activeDot].style.display = "block";
+                slider.activeNavDot = activeDot;
             },
             
             setNextActiveNavDot: () => {
-                if(slider.TrackerActiveNavDot === slider.allActiveNavDots.length - 1){
-                    console.log("if");
-                    console.log("slider.TrackerActiveNavDot: ", slider.TrackerActiveNavDot);
-                    console.log("slider.allActiveNavDots.length - 1: ", slider.allActiveNavDots.length - 1);
-                    console.log("slider.TrackerActiveNavDot = slider.allActiveNavDots.length - 1");
-                    // slider.setActiveNavDot(0);
-                    slider.TrackerActiveNavDot = slider.TrackerActiveNavDot + 1;
-                    // slider.activeSlide = slider.activeSlide + 1;
-                } else if (slider.TrackerActiveNavDot === slider.allActiveNavDots.length){
-                    console.log("else if");
-                    slider.setActiveNavDot(0);
-                    slider.TrackerActiveNavDot = 0;
-                } else {
-                    console.log("else");
-                    const nextSlide = slider.activeSlide + 1;
-                    slider.setActiveNavDot(nextSlide);
-                    slider.activeSlide = nextSlide;
+
+                switch (slider.activeNavDot) {
+                    case 0:           
+                        slider.setActiveNavDot(1);                              
+                        break;
+                    case 1:              
+                        slider.setActiveNavDot(2);                             
+                        break;
+                    case 2:     
+                        slider.setActiveNavDot(0);                                      
+                        break;
+                    case 3: 
+                        slider.setActiveNavDot(1);                                           
+                        break;
+                    case 4:     
+                        slider.setActiveNavDot(2);                                      
+                        break;
+                    case 5:     
+                        slider.setActiveNavDot(0);                                   
+                        break;
+                }
+            },
+
+            setActiveImage: (active) => {
+                switch (active) {
+                    case slider.viewportMin.xl:
+
+                        console.log("reszie: xl ");
+
+                        slider.image.record.active = slider.image.record.xl;
+                        // slider.loadImage(slider.image.record.xl);
+                        // slider.image.publish.active = slider.image.publish.xl;
+                        // slider.image.win.active = slider.image.win.xl;
+                        slider.viewportMin.active = slider.viewportMin.xl;
+                    break;
+
+                    case slider.viewportMin.lg:
+
+                        console.log("reszie: lg ");
+
+                        slider.image.record.active = slider.image.record.lg;
+                        // slider.image.publish.active = slider.image.publish.lg;
+                        // slider.image.win.active = slider.image.win.lg;
+                        slider.viewportMin.active = slider.viewportMin.lg;
+                    break;
+
+                    case slider.viewportMin.md:
+
+                        console.log("reszie: md ");
+
+                        slider.image.record.active = slider.image.record.md;
+                        // slider.image.publish.active = slider.image.publish.md;
+                        // slider.image.win.active = slider.image.win.md;
+                        slider.viewportMin.active = slider.viewportMin.md;
+                        break;
+
+                    case slider.viewportMin.sm:
+
+                        console.log("reszie: sm ");
+
+                        slider.image.record.active = slider.image.record.sm;
+                        // slider.image.publish.active = slider.image.publish.sm;
+                        // slider.image.win.active = slider.image.win.sm;
+                        slider.viewportMin.active = slider.viewportMin.sm;
+                        break;
                 }
             }
         } // const slider = {}
         
-        /* Track click events on Dots Navigation */
+        /* Track click events on Slider Dots Navigation */
         setTimeout(() => {
             const slideOneDot = document.getElementById("Click1");
             slideOneDot.addEventListener("click", () => {
-                console.log("Click1");
-                slider.loadImage(slider.bgImageSinging);
+                slider.loadImage(slider.image.record.active);
                 slider.activeSlide = 0;
                 slider.setActiveNavDot(0);
+                slider.activeNavDot = 0;
                 createEvent(document.getElementById('slick-slide-control00'), 'click');
             });
 
             const slideTwoDot = document.getElementById("click2");
             slideTwoDot.addEventListener("click", () => {
-                console.log("click2");
-                slider.loadImage(slider.bgImagePublish);
+                slider.loadImage(slider.image.publish.active);
                 slider.activeSlide = 1;
                 slider.setActiveNavDot(1);
+                slider.activeNavDot = 1;
                 createEvent(document.getElementById('slick-slide-control01'), 'click');
             });
 
             const slideTwoThree = document.getElementById("click3");
             slideTwoThree.addEventListener("click", () => {
-                console.log("click3");
-                slider.loadImage(slider.bgImageWin);
+                slider.loadImage(slider.image.win.active);
                 slider.activeSlide = 2;
                 slider.setActiveNavDot(2);
+                slider.activeNavDot = 2;
                 createEvent(document.getElementById('slick-slide-control02'), 'click');
             });
         },slider.slideDelay);
 
-        const array = ["a", "b", "c", "d"];  // 6 items
-
-        console.log("array length: ", array.length);
-
-        for (let i = 0; i <= array.length; i++) {
-            console.log("i: ", i);
-            console.log("array[i]: ", array[i]);
-        }
-
-        slider.loadImage(slider.initialBgImage);   
-        slider.removeAllActiveNavDots();
+        slider.loadImage(slider.image.initialload);   
+        slider.removeActiveNavDotsList();
         slider.setActiveNavDot(0);     
+
+
+        window.addEventListener("resize", () => {
+            const viewPortWidth = window.innerWidth;
+            if ( viewPortWidth > slider.viewportMin.xl && slider.viewportMin.active !== slider.viewportMin.xl) {
+                slider.setActiveImage(slider.viewportMin.xl);
+            }             
+            else if (viewPortWidth > slider.viewportMin.lg && viewPortWidth < slider.viewportMin.xl && slider.viewportMin.active !== slider.viewportMin.lg) {
+                slider.setActiveImage(slider.viewportMin.lg);
+            }
+            else if (viewPortWidth > slider.viewportMin.md && viewPortWidth < slider.viewportMin.lg && slider.viewportMin.active !== slider.viewportMin.md) {
+                slider.setActiveImage(slider.viewportMin.md);
+            }
+            else if (viewPortWidth > slider.viewportMin.sm && viewPortWidth < slider.viewportMin.md && slider.viewportMin.active !== slider.viewportMin.sm) {
+                slider.setActiveImage(slider.viewportMin.sm);
+            }
+        });
 
     </script>
 
