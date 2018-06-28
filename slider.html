@@ -198,18 +198,38 @@
                 lg: 968,
                 md: 768,
                 sm: 414,
-                active: 1500
+                active: 1500               
+            },
+
+            viewportWidthRange: {
+
+                xxl: 1920,
+                xl: 1500,
+                lg: 1200,
+                md: 968,
+                sm: 768,
+                xs: 414,
+
+                doubleExtraLarge: 'xxl',
+                extraLarge: 'xl',
+                large: 'lg',
+                medium: 'md',
+                small: 'sm',
+                extraSmall: 'xs',
+
+                active: 'xxl'
             },
 
             image: {                               
 
                 record: {
                     active: "bg-slider-singing-1920w-161kb.jpg",
+                    xxl: "bg-slider-singing-1920w-161kb.jpg",  // > 1500
                     xl: "bg-slider-singing-1920w-161kb.jpg",  // > 1500
                     lg: "bg-slider-singing-1515w-133kb.jpg", //  < 1500
                     md: "bg-slider-singing-1053w-163kb.jpg",  // < 1000
                     sm: "bg-slider-singing-840w-156kb.jpg", // < 768
-                    xm: "bg-slider-singing-414w-24kb.jpg"                                    
+                    xs: "bg-capital-mobile-414w-33kb.jpg"                                    
                 }, 
                 publish: {
                     active: "bg-publish-1920w-70kb.jpg",
@@ -217,7 +237,7 @@
                     lg: "",
                     md: "",
                     sm: "",
-                    xm: ""  
+                    xs: ""  
                 }, 
                 win: {
                     active: "bg-win-1920w-90kb.jpg",
@@ -225,7 +245,7 @@
                     lg: "",
                     md: "",
                     sm: "",
-                    xm: ""                      
+                    xs: ""                      
                 },
 
                 element: document.getElementById("bgImage"),
@@ -301,48 +321,71 @@
                 }
             },
 
-            setActiveImage: (active) => {
-                switch (active) {
-                    case slider.viewportMin.xl:
+            setActiveImage: (activeViewportRange) => {
+                switch (activeViewportRange) {
+                    case slider.viewportWidthRange.doubleExtraLarge:
 
-                        console.log("reszie: xl ");
+                        console.log("reszie: Double Extra Large ");
+
+                        slider.image.record.active = slider.image.record.xxl;
+                    break;
+
+                    case slider.viewportWidthRange.extraLarge:
+
+                        console.log("reszie: Extra Large ");
 
                         slider.image.record.active = slider.image.record.xl;
-                        // slider.loadImage(slider.image.record.xl);
-                        // slider.image.publish.active = slider.image.publish.xl;
-                        // slider.image.win.active = slider.image.win.xl;
-                        slider.viewportMin.active = slider.viewportMin.xl;
                     break;
 
-                    case slider.viewportMin.lg:
+                    case slider.viewportWidthRange.large:
 
-                        console.log("reszie: lg ");
+                        console.log("reszie: large ");
 
                         slider.image.record.active = slider.image.record.lg;
-                        // slider.image.publish.active = slider.image.publish.lg;
-                        // slider.image.win.active = slider.image.win.lg;
-                        slider.viewportMin.active = slider.viewportMin.lg;
-                    break;
+                        break;
 
-                    case slider.viewportMin.md:
+                    case slider.viewportWidthRange.medium:
 
-                        console.log("reszie: md ");
+                        console.log("reszie: medium ");
 
                         slider.image.record.active = slider.image.record.md;
-                        // slider.image.publish.active = slider.image.publish.md;
-                        // slider.image.win.active = slider.image.win.md;
-                        slider.viewportMin.active = slider.viewportMin.md;
                         break;
 
-                    case slider.viewportMin.sm:
+                    case slider.viewportWidthRange.small:
 
-                        console.log("reszie: sm ");
+                        console.log("reszie: small ");
 
                         slider.image.record.active = slider.image.record.sm;
-                        // slider.image.publish.active = slider.image.publish.sm;
-                        // slider.image.win.active = slider.image.win.sm;
-                        slider.viewportMin.active = slider.viewportMin.sm;
                         break;
+                    
+                    case slider.viewportWidthRange.extraSmall:
+
+                        console.log("reszie: Extra Small ");
+
+                        slider.image.record.active = slider.image.record.xs;
+                        break;
+                }
+            },
+
+            setViewportWidthRange: () => {
+                const viewportWidth = window.innerWidth;
+
+                if (viewportWidth <= slider.viewportWidthRange.xs) {                    
+                    slider.viewportWidthRange.active = slider.viewportWidthRange.extraSmall;
+                } 
+                else if (viewportWidth <= slider.viewportWidthRange.sm) {                    
+                    slider.viewportWidthRange.active = slider.viewportWidthRange.small;
+                } 
+                else if (viewportWidth <= slider.viewportWidthRange.md) {                    
+                    slider.viewportWidthRange.active = slider.viewportWidthRange.medium;
+                } 
+                else if (viewportWidth <= slider.viewportWidthRange.lg) {                    
+                    slider.viewportWidthRange.active = slider.viewportWidthRange.large;
+                } 
+                else if (viewportWidth <= slider.viewportWidthRange.xl) {                    
+                    slider.viewportWidthRange.active = slider.viewportWidthRange.extraLarge;
+                } else {                    
+                    slider.viewportWidthRange.active = slider.viewportWidthRange.doubleExtraLarge;
                 }
             }
         } // const slider = {}
@@ -377,25 +420,34 @@
             });
         },slider.slideDelay);
 
-        slider.loadImage(slider.image.initialload);   
+        slider.setViewportWidthRange();
+        slider.setActiveImage(slider.viewportWidthRange.active);
+
+        slider.loadImage(slider.image.record.active);   
         slider.removeActiveNavDotsList();
         slider.setActiveNavDot(0);     
 
 
         window.addEventListener("resize", () => {
-            const viewPortWidth = window.innerWidth;
-            if ( viewPortWidth > slider.viewportMin.xl && slider.viewportMin.active !== slider.viewportMin.xl) {
-                slider.setActiveImage(slider.viewportMin.xl);
-            }             
-            else if (viewPortWidth > slider.viewportMin.lg && viewPortWidth < slider.viewportMin.xl && slider.viewportMin.active !== slider.viewportMin.lg) {
-                slider.setActiveImage(slider.viewportMin.lg);
-            }
-            else if (viewPortWidth > slider.viewportMin.md && viewPortWidth < slider.viewportMin.lg && slider.viewportMin.active !== slider.viewportMin.md) {
-                slider.setActiveImage(slider.viewportMin.md);
-            }
-            else if (viewPortWidth > slider.viewportMin.sm && viewPortWidth < slider.viewportMin.md && slider.viewportMin.active !== slider.viewportMin.sm) {
-                slider.setActiveImage(slider.viewportMin.sm);
-            }
+            slider.setViewportWidthRange();
+            slider.setActiveImage(slider.viewportWidthRange.active);
+
+            // const viewPortWidth = window.innerWidth;
+            // if ( viewPortWidth > slider.viewportMin.xl && slider.viewportMin.active !== slider.viewportMin.xl) {
+            //     slider.setActiveImage(slider.viewportMin.xl);
+            // }             
+            // else if (viewPortWidth > slider.viewportMin.lg && viewPortWidth < slider.viewportMin.xl && slider.viewportMin.active !== slider.viewportMin.lg) {
+            //     slider.setActiveImage(slider.viewportMin.lg);
+            // }
+            // else if (viewPortWidth > slider.viewportMin.md && viewPortWidth < slider.viewportMin.lg && slider.viewportMin.active !== slider.viewportMin.md) {
+            //     slider.setActiveImage(slider.viewportMin.md);
+            // }
+            // else if (viewPortWidth > slider.viewportMin.sm && viewPortWidth < slider.viewportMin.md && slider.viewportMin.active !== slider.viewportMin.sm) {
+            //     slider.setActiveImage(slider.viewportMin.sm);
+            // }
+            // else if (viewPortWidth < slider.viewportMin.sm && viewPortWidth < slider.viewportMin.sm && slider.viewportMin.active !== slider.viewportMin.xm) {
+            //     slider.setActiveImage(slider.viewportMin.xm);
+            // }
         });
 
     </script>
@@ -411,7 +463,7 @@
                 slidesToShow: 3,
                 slidesToScroll: 1,
                 swipe: false,
-                autoplay: true
+                autoplay: false
             });
         });
     </script>
