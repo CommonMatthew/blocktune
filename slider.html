@@ -193,13 +193,7 @@
             slideDelay: 1000,
             animationDelay: 100, 
 
-            viewportMin: {
-                xl: 1500,
-                lg: 968,
-                md: 768,
-                sm: 414,
-                active: 1500               
-            },
+            viewportWidth: 0,
 
             viewportWidthRange: {
 
@@ -223,29 +217,29 @@
             image: {                               
 
                 record: {
-                    active: "bg-slider-singing-1920w-161kb.jpg",
+                    active: "bg-slider-singing-1920w-161kb.jpg", 
                     xxl: "bg-slider-singing-1920w-161kb.jpg",  // > 1500
-                    xl: "bg-slider-singing-1920w-161kb.jpg",  // > 1500
-                    lg: "bg-slider-singing-1515w-133kb.jpg", //  < 1500
-                    md: "bg-slider-singing-1053w-163kb.jpg",  // < 1000
-                    sm: "bg-slider-singing-840w-156kb.jpg", // < 768
-                    xs: "bg-capital-mobile-414w-33kb.jpg"                                    
+                    xl: "bg-slider-singing-1510w-125kb.jpg",  // > 1500
+                    lg: "bg-slider-singing-1236w-127kb.jpg", //  < 1500
+                    md: "bg-slider-singing-992w-168kb.jpg",  // < 1000
+                    sm: "bg-slider-singing-768w-129kb.jpg", // < 768
+                    xs: "bg-record-414w-97kb.jpg"                                    
                 }, 
                 publish: {
                     active: "bg-publish-1920w-70kb.jpg",
-                    xl: "bg-publish-1920w-70kb.jpg",
+                    xxl: "bg-publish-1920w-70kb.jpg",
                     lg: "",
                     md: "",
                     sm: "",
-                    xs: ""  
+                    xs: "bg-publish-414w-27kb.jpg"  
                 }, 
                 win: {
                     active: "bg-win-1920w-90kb.jpg",
-                    xl: "bg-win-1920w-90kb.jpg",
+                    xxl: "bg-win-1920w-90kb.jpg",
                     lg: "",
                     md: "",
                     sm: "",
-                    xs: ""                      
+                    xs: "bg-win-414w-23kb.jpg"                      
                 },
 
                 element: document.getElementById("bgImage"),
@@ -321,54 +315,81 @@
                 }
             },
 
-            setActiveImage: (activeViewportRange) => {
+            centerImageElement: (setViewport) => {             
+                const marginLeft = (setViewport - slider.viewportWidth) / 2;
+
+                document.getElementById("bgImage").style.marginLeft = `-${marginLeft}px`;
+
+                console.log("---------- centerImageElement  ----------");
+                console.log("setViewport: ", setViewport);
+                console.log("slider.viewportWidth: ", slider.viewportWidth);
+                console.log("marginLeft: ", marginLeft);
+                console.log(" `-${marginLeft}px`: ",  `-${marginLeft}px`);
+                console.log("-----------------------------------");
+            },
+
+            setActiveImages: (activeViewportRange) => {
                 switch (activeViewportRange) {
-                    case slider.viewportWidthRange.doubleExtraLarge:
-
-                        console.log("reszie: Double Extra Large ");
-
+                    case slider.viewportWidthRange.doubleExtraLarge:                     
                         slider.image.record.active = slider.image.record.xxl;
+                        slider.image.publish.active = slider.image.publish.xxl;
+                        slider.image.win.active = slider.image.win.xxl;
+                        slider.centerImageElement(slider.viewportWidthRange.xxl);
+
+                        console.log("resize: Double Extra Large ");
+
                     break;
 
                     case slider.viewportWidthRange.extraLarge:
+                        slider.image.record.active = slider.image.record.xxl;
+                        slider.image.publish.active = slider.image.publish.xxl;
+                        slider.image.win.active = slider.image.win.xxl;
+                        slider.centerImageElement(slider.viewportWidthRange.xxl);
 
                         console.log("reszie: Extra Large ");
-
-                        slider.image.record.active = slider.image.record.xl;
                     break;
 
                     case slider.viewportWidthRange.large:
+                        slider.image.record.active = slider.image.record.xxl;
+                        slider.image.publish.active = slider.image.publish.xxl;
+                        slider.image.win.active = slider.image.win.xxl;
+                        slider.centerImageElement(slider.viewportWidthRange.xxl);
 
                         console.log("reszie: large ");
-
-                        slider.image.record.active = slider.image.record.lg;
                         break;
 
                     case slider.viewportWidthRange.medium:
+                        slider.image.record.active = slider.image.record.xxl;
+                        slider.image.publish.active = slider.image.publish.xxl;
+                        slider.image.win.active = slider.image.win.xxl;
+                        slider.centerImageElement(slider.viewportWidthRange.xxl);
 
                         console.log("reszie: medium ");
-
-                        slider.image.record.active = slider.image.record.md;
                         break;
 
                     case slider.viewportWidthRange.small:
+                        slider.image.record.active = slider.image.record.xxl;
+                        slider.image.publish.active = slider.image.publish.xxl;
+                        slider.image.win.active = slider.image.win.xxl;
+                        slider.centerImageElement(slider.viewportWidthRange.xxl);
 
                         console.log("reszie: small ");
-
-                        slider.image.record.active = slider.image.record.sm;
                         break;
                     
-                    case slider.viewportWidthRange.extraSmall:
+                    case slider.viewportWidthRange.extraSmall:                      
+                        slider.image.record.active = slider.image.record.xs;
+                        slider.image.publish.active = slider.image.publish.xs;
+                        slider.image.win.active = slider.image.win.xs;
+                        slider.centerImageElement(slider.viewportWidthRange.xs);
 
                         console.log("reszie: Extra Small ");
-
-                        slider.image.record.active = slider.image.record.xs;
                         break;
                 }
             },
 
             setViewportWidthRange: () => {
                 const viewportWidth = window.innerWidth;
+                slider.viewportWidth = viewportWidth;
 
                 if (viewportWidth <= slider.viewportWidthRange.xs) {                    
                     slider.viewportWidthRange.active = slider.viewportWidthRange.extraSmall;
@@ -421,33 +442,15 @@
         },slider.slideDelay);
 
         slider.setViewportWidthRange();
-        slider.setActiveImage(slider.viewportWidthRange.active);
+        slider.setActiveImages(slider.viewportWidthRange.active);
 
         slider.loadImage(slider.image.record.active);   
         slider.removeActiveNavDotsList();
         slider.setActiveNavDot(0);     
 
-
         window.addEventListener("resize", () => {
             slider.setViewportWidthRange();
-            slider.setActiveImage(slider.viewportWidthRange.active);
-
-            // const viewPortWidth = window.innerWidth;
-            // if ( viewPortWidth > slider.viewportMin.xl && slider.viewportMin.active !== slider.viewportMin.xl) {
-            //     slider.setActiveImage(slider.viewportMin.xl);
-            // }             
-            // else if (viewPortWidth > slider.viewportMin.lg && viewPortWidth < slider.viewportMin.xl && slider.viewportMin.active !== slider.viewportMin.lg) {
-            //     slider.setActiveImage(slider.viewportMin.lg);
-            // }
-            // else if (viewPortWidth > slider.viewportMin.md && viewPortWidth < slider.viewportMin.lg && slider.viewportMin.active !== slider.viewportMin.md) {
-            //     slider.setActiveImage(slider.viewportMin.md);
-            // }
-            // else if (viewPortWidth > slider.viewportMin.sm && viewPortWidth < slider.viewportMin.md && slider.viewportMin.active !== slider.viewportMin.sm) {
-            //     slider.setActiveImage(slider.viewportMin.sm);
-            // }
-            // else if (viewPortWidth < slider.viewportMin.sm && viewPortWidth < slider.viewportMin.sm && slider.viewportMin.active !== slider.viewportMin.xm) {
-            //     slider.setActiveImage(slider.viewportMin.xm);
-            // }
+            slider.setActiveImages(slider.viewportWidthRange.active);
         });
 
     </script>

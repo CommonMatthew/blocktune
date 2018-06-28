@@ -1,14 +1,13 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
 .sliderSplash {
     max-width: 1920px;
     height: 100vh;
-    /* background-size: cover; */
     overflow-x: hidden;
-
 }
 #pageBg {
-    /* background: none; */
-    /* background-size: cover; */
-    /* background-position: center; */
     transition: background 2s ease-in-out;
 }
 #bgImage {
@@ -16,7 +15,7 @@
     top: 0;
     left: 0;
     z-index: -5;
-    animation: imageAnimation 0.8s linear;
+    animation: imageAnimation 0.8s linear;    
 }
 @keyframes imageAnimation { 
     0% { 
@@ -150,8 +149,6 @@
     text-align: center;
     bottom: 20vh;
     left: calc(50% - 250px);
-
-    /* border: 1px solid yellow; */
 }
 .callToAction  p { 
     font-family: var(--Font-Family-Secondary);
@@ -173,6 +170,7 @@
 
     /* border: 1px solid red; */
 }
+/* Viewport Height */
 @media (max-height: 900px) {
     .nav-two {
         margin: 50px auto 0 auto;
@@ -214,7 +212,7 @@
         display: none;
     }
 }
-
+/* Viewport Width */
 @media (max-width: 1500px) {
     .center .slide-cai .ctn h1 {
         font-size: 80px;
@@ -285,10 +283,14 @@
     .callToAction {
         width: 300px;
         left: calc(50% - 150px);
-        top: 450px;
+        top: 500px;
     }
     .callToAction p {
         font-size: 16px;
+    }
+    .sliderNavWrapper {
+        bottom: auto;
+        top: 720px;
     }
 }
 @media (max-width: 500px) {
@@ -299,14 +301,25 @@
     .callToAction {
         width: 270px;
         left: calc(50% - 135px);
-        top: 450px;
+        /* top: 450px; */
     }
     .center .slide-cai .ctn h1 {
         font-size: 6.8vw;
     }
+    
 }
-@media (max-width: 400px) {
-    /* .center .slide-cai .ctn h1 {
-        font-size: 6.8vw;
-    } */
+@media (max-width: 414px) {
+    
+    .center {
+        margin: 200px 0 0 -45%;
+        height: 50px;
+    }
+    .callToAction {
+        bottom: auto;
+        top: 430px;
+    }
+    .sliderNavWrapper {
+        bottom: auto;
+        top: 680px;
+    }
 }
