@@ -304,6 +304,8 @@ input:focus {
    right: 100px;
    display: grid;
    grid-template-columns: repeat(3, 1fr);
+
+   display: none;
 }
 .partners-logo img { 
     display: block;
