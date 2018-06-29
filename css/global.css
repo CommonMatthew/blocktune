@@ -130,15 +130,11 @@ input:focus {
     height: auto;
     z-index: 20;
     position: relative;
-
-    /* border: 1px solid blue; */
 }
 .nav-wrapper .ctn { 
     width: 1680px;
     height: 150px;
     margin: 0 auto;
-
-    /* border: 1px solid green; */
 }
 /*---*/
 .nav-wrapper .ctn .logo-n-hamburgerIcon { 
@@ -146,8 +142,6 @@ input:focus {
     height: auto;
     margin-top: 77px;
     float: left;
-/* 
-    border: 1px solid red; */
 }
 .nav-wrapper .ctn .logo-n-hamburgerIcon #openMenu { 
     display: none;
@@ -164,13 +158,9 @@ input:focus {
     float: right;
     z-index: 1;
     margin-top: 80px;
-
-    /* border: 1px solid purple; */
 }
 .nav-wrapper .ctn .links div { 
     text-align: center;
-
-    /* border: 1px solid red; */
 }
 .nav-wrapper .ctn .links .hideOnDesktopShowOnMobile { 
     display: none;
@@ -196,13 +186,7 @@ input:focus {
 .nav-wrapper .ctn .links .tryItOut:hover { 
     background-image: linear-gradient(289deg, #563e98, #ab88e8);
 }
-
-
-
-
-
-
-
+/* Other Navbar - Experimentation */
 .nav-two {
     max-width: 1500px;
     color: white;
@@ -239,7 +223,6 @@ input:focus {
     font-size: 24px;
 }
 .nav-two .links-ctn .row .tryItNow:hover  { 
-    /* color: #563e98; */
     background-image: linear-gradient(289deg, #563e98, #ab88e8);
     border: 1px solid #563e98;
     font-size: 26px;
@@ -280,8 +263,6 @@ input:focus {
     position: relative;
     height: 143px;
     background-color: white;
-
-    /* border: 1px solid white; */
 }
 .footer .logo-ctn img { 
     margin: 48px 0 0 59px;
@@ -314,9 +295,26 @@ input:focus {
     font-weight: 500;
     color: var(--Color-Tertiary);
 }
+/* Partner's Logo */
+.partners-logo {
+   width: 500px;
+   height: auto;
+   position: absolute;
+   bottom: 110px;
+   right: 100px;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+}
+.partners-logo img { 
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+}
 /* Height */
-@media (max-height: 900px) {
-
+@media (max-height: 768px) {
+    .partners-logo {
+        display: none;
+    }
 }
 /* Width */
 @media(max-width: 1920px){
@@ -339,6 +337,10 @@ input:focus {
     }
 }
 @media(max-width: 1500px){
+    .partners-logo {
+        bottom: 110px;
+        right: 50px;
+    }
     .nav-two .logo {
         margin: 0 0 0 50px; 
     }
@@ -382,10 +384,18 @@ input:focus {
         grid-template-columns: 25% 25% 50%;
         width: 60%;
     }
+    .partners-logo {
+        width: 400px;
+        bottom: 110px;
+        right: 20px;
+    }
 }
 @media(max-width: 1200px){
     .nav-two .links-ctn {
         width: 550px;
+    }
+    .partners-logo {
+        display: none;
     }
 }
 @media (max-width: 1100px) {
@@ -493,7 +503,6 @@ input:focus {
     }
     
     .nav-wrapper .ctn .links .mobile-logo img:hover { 
-        /* width: 235px; */
         margin-left: 10px;
     }
     .nav-wrapper .ctn .links .normalLinks { 
@@ -516,8 +525,6 @@ input:focus {
         opacity: 0;
         transition: opacity 0.9s ease-in-out;
     }
-
-
     .nav-two .links-ctn  {
         display: none;
     }

@@ -170,8 +170,30 @@ body {
 
     /* border: 1px solid red; */
 }
+/* Purple Lines */
+.purple-line-ctn {
+    position: absolute;
+    width: 750px;
+    height: 50px;
+    top: 490px;
+    left: calc(50% - 375px);
+}
+.purple-line-ctn div { 
+    width: 94px;
+    /* height: 1px; */
+    border-bottom: solid 0.5px #ac66fd;
+}
+.purple-line-ctn .left { 
+    float: left;
+}
+.purple-line-ctn .left { 
+    float: right;
+}
 /* Viewport Height */
 @media (max-height: 900px) {
+    #bgImage {
+        margin-top: -100px;
+    }
     .nav-two {
         margin: 50px auto 0 auto;
     }
@@ -188,6 +210,24 @@ body {
     }
     .socialmedia {
         bottom: 10vh;
+    }
+    .purple-line-ctn {
+        top: 360px;
+    }
+}
+@media (max-width: 1500px) and (max-height: 900px) {
+    .purple-line-ctn {
+        top: 340px !important;
+    }
+}
+@media (max-width: 1200px) and (max-height: 900px) {
+    .purple-line-ctn {
+        top: 315px !important;
+    }
+}
+@media (max-width: 4140px) and (max-height: 900px) {
+    #bgImage {
+        margin-top: 0;
     }
 }
 @media (max-height: 650px) {
@@ -220,6 +260,11 @@ body {
     .socialmedia {
         left: 100px;
     }
+    .purple-line-ctn {
+        width: 670px;
+        top: 470px;
+        left: calc(50% - 335px);
+    }
 }
 @media (max-width: 1200px) {
     .center .slide-cai .ctn {
@@ -248,6 +293,14 @@ body {
         height: 18px;
         margin: 0 10px 0px 10px;
     }
+    .purple-line-ctn {
+        width: 410px;
+        top: 445px;
+        left: calc(50% - 200px);
+    }
+    .purple-line-ctn div { 
+        width: 40px;
+    }
 }
 @media (max-width: 990px) {
     .center .slide-cai .ctn h1 {
@@ -262,20 +315,10 @@ body {
         width: 170%;
         margin: 250px 0 0 -35%;
     }
-    .center div {
-        /* width: 33%; */
-
-        /* border: 1px solid red; */
-    }
     .center .slide-cai .ctn h1 .purplePeriod {
         width: 10px;
         height: 10px !important;
         margin-left: -20px;
-    }
-    .slick-slider .slick-list .slick-track .slick-slide {
-        /* width: 70% !important; */
-
-        /* border: 1px solid blue; */
     }
     .center .slide-cai .ctn h1 {
         font-size: 36px;
@@ -292,6 +335,9 @@ body {
         bottom: auto;
         top: 720px;
     }
+    .purple-line-ctn {
+        display: none;
+    }
 }
 @media (max-width: 500px) {
     .center {
@@ -301,7 +347,6 @@ body {
     .callToAction {
         width: 270px;
         left: calc(50% - 135px);
-        /* top: 450px; */
     }
     .center .slide-cai .ctn h1 {
         font-size: 6.8vw;
