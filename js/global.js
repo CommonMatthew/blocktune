@@ -75,7 +75,7 @@ const navbar = `
             <div class="logo-n-hamburgerIcon">
                 <!-- -->
                 <img src="img/icon-hamburger-menu.svg" id="openMenu" alt="Menu">
-                <a href="#" class="logo-desktop">
+                <a href="index.html" class="logo-desktop">
                     <img src="img/logo-block-tune-343w-10kb.png" alt="BlockTune">
                 </a>  
             </div>
@@ -83,29 +83,29 @@ const navbar = `
              <div class="links">
                 <!-- Mobile Logo -->
                 <div class="hideOnDesktopShowOnMobile mobile-logo">
-                    <a href="#">
+                    <a href="index.html">
                         <img src="img/logo-block-tune-227w-4a4a4a-5kb.jpg" class="navbarLinksTransition" alt="">
                     </a>
-                </div>
+                </div
                 <!-- Regular Links -->
                 <div class="discover-ctn">
-                    <a href="#" class="normalLinks navbarLinksTransition">Discover</a>
+                    <a href="https://dash.blocktune.io/register/?r=/new" class="normalLinks navbarLinksTransition">Discover</a>
                 </div>
                 <div class="login-ctn">
-                    <a href="#" class="normalLinks navbarLinksTransition">Log In</a>
+                    <a href="https://dash.blocktune.io/login" class="normalLinks navbarLinksTransition">Log In</a>
                 </div>
                 <div class="tryitnow-ctn">
-                    <a href="#" class="tryItOut navbarLinksTransition">Try It Now</a>
+                    <a href="https://dash.blocktune.io/register/?r=/new" class="tryItOut navbarLinksTransition">Try It Now</a>
                 </div>
                 <!-- Social Media -->
                 <div class="hideOnDesktopShowOnMobile socialMedia-ctn">
-                    <a href="#" target="_blank">
+                    <a href="https://www.facebook.com/commonedits" target="_blank">
                         <img src="img/logo-facebook-4a4a4a.svg" class="navbarLinksTransition" alt="Facebook: BlockTune">
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://twitter.com/commonedits" target="_blank">
                         <img src="img/logo-twitter-4a4a4a.svg" class="navbarLinksTransition" alt="Twitter: BlockTune">
                     </a>
-                    <a href="#" target="_blank">
+                    <a href="https://www.instagram.com/commonedits/" target="_blank">
                         <img src="img/logo-Instagram-4a4a4a.svg" class="navbarLinksTransition" alt="Instragram: BlockTune">
                     </a>
                 </div>
