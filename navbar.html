@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="css/global.css">
+<style>
+    body {
+        background-color: gray;
+    }
+</style>
+
+
+<div class="nav-wrapper">
+    <div class="ctn">
+        <!-- Menu on the left side-->
+        <div class="logo-n-hamburgerIcon">
+            <!-- -->
+            <img src="img/icon-hamburger-menu.svg" id="openMenu" alt="Menu">
+            <a href="#" class="logo-desktop">
+                <img src="img/logo-block-tune-343w-10kb.png" alt="BlockTune">
+            </a>  
+        </div>
+        <!-- Menu on the right side-->
+        <div class="links">
+            <!-- Mobile Logo -->
+            <div class="hideOnDesktopShowOnMobile mobile-logo">
+                <a href="#">
+                    <img src="img/logo-block-tune-227w-4a4a4a-5kb.jpg" class="navbarLinksTransition" alt="">
+                </a>
+            </div>
+            <!-- Regular Links -->
+            <div>
+                <a href="#" class="normalLinks navbarLinksTransition">Discover</a>
+            </div>
+            <div>
+                <a href="#" class="normalLinks navbarLinksTransition">Log In</a>
+            </div>
+            <div>
+                <a href="#" class="tryItOut navbarLinksTransition">Try It Now</a>
+            </div>
+            <!-- Social Media -->
+            <div class="hideOnDesktopShowOnMobile socialMedia-ctn">
+                <a href="#" target="_blank">
+                    <img src="img/logo-facebook-4a4a4a.svg" class="navbarLinksTransition" alt="Facebook: BlockTune">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="img/logo-twitter-4a4a4a.svg" class="navbarLinksTransition" alt="Twitter: BlockTune">
+                </a>
+                <a href="#" target="_blank">
+                    <img src="img/logo-Instagram-4a4a4a.svg" class="navbarLinksTransition" alt="Instragram: BlockTune">
+                </a>
+            </div>
+            <!-- Close Menu -->
+            <div class="hideOnDesktopShowOnMobile" id="closeMenu">
+                <img src="img/icon-close-menu-4a4a4a.svg" class="navbarLinksTransition"  alt="BlockTune: Close Menu">
+            </div>
+        </div>
+
+        
+    </div>
+</div>
+
+
+<script>
+    const navbarBT = {
+        openMenuBtn: document.getElementById('openMenu'),
+        closeMenuBtn: document.getElementById('closeMenu'),
+        linksContainer: document.getElementsByClassName('links')[0],
+        openMobileLinks: document.getElementsByClassName('navbarLinksTransition'),
+
+        openMenu: () => {
+            navbarBT.linksContainer.style.marginTop = "0";
+            let reverseCounter = navbarBT.openMobileLinks.length - 1;
+            for(let i = 0; i < navbarBT.openMobileLinks.length; i++){
+                setTimeout( () => {
+                    navbarBT.openMobileLinks[reverseCounter].style.opacity = 1;
+                    --reverseCounter;
+                },300);                
+            }
+
+        },
+
+        closeMenu: () => {
+            console.log('closeMenu: () => {');
+
+            
+            let reverseCounter = navbarBT.openMobileLinks.length - 1;
+            for (let i = 0; i < navbarBT.openMobileLinks.length; i++) {
+                setTimeout(() => {
+                    navbarBT.openMobileLinks[reverseCounter].style.opacity = 0;
+                    --reverseCounter;
+                }, 50);
+            }
+            navbarBT.linksContainer.style.marginTop = "-500px";
+
+        }
+    }
+
+    navbarBT.openMenuBtn.addEventListener('click', () => {
+        console.log('open the menu');
+
+        navbarBT.openMenu();
+    });
+    navbarBT.closeMenuBtn.addEventListener('click', () => {
+        console.log('close the menu');
+
+        navbarBT.closeMenu();
+    });
+</script>
