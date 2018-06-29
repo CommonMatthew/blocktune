@@ -128,12 +128,14 @@ input:focus {
 .nav-wrapper {
     max-width: 1920px;
     height: auto;
+    z-index: 20;
+    position: relative;
 
     /* border: 1px solid blue; */
 }
 .nav-wrapper .ctn { 
     width: 1680px;
-    height: 300px;
+    height: 150px;
     margin: 0 auto;
 
     /* border: 1px solid green; */
@@ -446,6 +448,12 @@ input:focus {
     .nav-wrapper .ctn .links { 
         display: grid;
         grid-template-columns: 1fr;
+        grid-template-areas:    'logo'
+                                'login' 
+                                'discover' 
+                                'tryItNow' 
+                                'socialMedia'
+                                'closeMenu';
         width: 100%;
         background-color: white;
         float: auto;
@@ -464,9 +472,26 @@ input:focus {
         background-color: white;
         padding: 20px 0;
     }
-    .nav-wrapper .ctn .links .mobile-logo{ 
+    .nav-wrapper .ctn .links .mobile-logo { 
+        grid-area: logo;
         padding: 20px 0 50px 0;
     }
+    .nav-wrapper .ctn .links .discover-ctn { 
+        grid-area: discover;
+    }
+    .nav-wrapper .ctn .links .login-ctn { 
+        grid-area: login;
+    }
+    .nav-wrapper .ctn .links .tryitnow-ctn { 
+        grid-area: tryItNow;
+    }
+    .nav-wrapper .ctn .links .socialMedia-ctn { 
+        grid-area: socialMedia;
+    }
+    .nav-wrapper .ctn .links #closeMenu { 
+        grid-area: closeMenu;
+    }
+    
     .nav-wrapper .ctn .links .mobile-logo img:hover { 
         /* width: 235px; */
         margin-left: 10px;

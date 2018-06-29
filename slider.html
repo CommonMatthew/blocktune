@@ -20,38 +20,10 @@
         <!-- Background Image -->
         <img src="" id="bgImage">
 
-        <!-- Navbar-->
-        <div class="nav-two">
-        
-            <div class="login-container-general">
-                <script>
-                    document.write(loginHTML);
-                </script>
-            </div>
-        
-            <img src="img/logo-block-tune-343w-10kb.png" class="logo" alt="">
-        
-            <div class="links-ctn constainer">
-                <div class="row">
-                    <div class="col-md-3 col-lg-3 col-xl-3">
-                        <a href="#" class="reg">
-                            Discover
-                        </a>
-                    </div>
-                    <div class="col-md-3 col-lg-3 col-xl-3">
-                        <a href="#" class="reg">
-                            Log In
-                        </a>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-xl-6">
-                        <a href="#" class="tryItNow">
-                            Try It Now
-                        </a>
-                    </div>
-                </div>
-            </div>        
-        </div>
-
+        <!-- Navbar -->
+        <script>
+            document.write(navbar);
+        </script>
 
         <!-- Content -->
         <div class="callToAction">
@@ -320,12 +292,12 @@
 
                 document.getElementById("bgImage").style.marginLeft = `-${marginLeft}px`;
 
-                console.log("---------- centerImageElement  ----------");
-                console.log("setViewport: ", setViewport);
-                console.log("slider.viewportWidth: ", slider.viewportWidth);
-                console.log("marginLeft: ", marginLeft);
-                console.log(" `-${marginLeft}px`: ",  `-${marginLeft}px`);
-                console.log("-----------------------------------");
+                // console.log("---------- centerImageElement  ----------");
+                // console.log("setViewport: ", setViewport);
+                // console.log("slider.viewportWidth: ", slider.viewportWidth);
+                // console.log("marginLeft: ", marginLeft);
+                // console.log(" `-${marginLeft}px`: ",  `-${marginLeft}px`);
+                // console.log("-----------------------------------");
             },
 
             setActiveImages: (activeViewportRange) => {
@@ -456,6 +428,7 @@
     </script>
 
     <script type="text/javascript" src="slick/slick.js"></script>
+    <script src="js/navbar.js"></script>
 
     <script type="text/javascript">
         $(document).on('ready', function () {
