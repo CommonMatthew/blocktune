@@ -391,8 +391,26 @@ body {
     
 }
 @media (max-width: 414px) {
-    
+    .center {
+        width: 170%;
+        margin: 160px 0 0 -35%;
+        height: 60px;
+
+        /* border: 1px solid red; */
+    }
     .center .slide-cai .ctn h1 {
-        font-size: 5.5vw;
+        font-size: 6vw;
+    }
+    .callToAction {
+        /* width: 300px;
+        left: calc(50% - 150px); */
+        top: 400px;
+    }
+    .callToAction p {
+        font-size: 4vw;
+    }
+    .sliderNavWrapper {
+        bottom: auto;
+        top: 650px;
     }
 }
